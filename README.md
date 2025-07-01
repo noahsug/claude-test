@@ -31,17 +31,20 @@ A modern web application that displays a collection of trading card game-style c
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd claude-test
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -76,6 +79,7 @@ src/
 ## Development Guidelines
 
 ### Code Organization
+
 - **Flat Structure** - Keep directory structure shallow and intuitive
 - **Component Proximity** - Keep components close to where they're used
 - **Clear Naming** - Use descriptive names for files, components, and variables
@@ -84,13 +88,16 @@ src/
 - **No Generic Helpers** - Avoid catch-all utility directories; place helpers close to where they're used
 
 ### Code Quality
+
 - **TypeScript** - Use strict type checking for reliability
 - **ESLint** - Follow established linting rules
 - **Prettier** - Maintain consistent code formatting
 - **Testing** - Write tests for components using React Testing Library
 
 ### Path Aliases
+
 The project uses path aliases for clean imports:
+
 - `@/*` - src directory
 - `@/components/*` - components directory
 - `@/types/*` - types directory
@@ -102,15 +109,15 @@ Cards follow this TypeScript interface:
 
 ```typescript
 interface Card {
-  id: string
-  name: string
-  description: string
-  imageUrl: string
-  cost: number
-  attack?: number
-  defense?: number
-  rarity: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary'
-  type: 'creature' | 'spell' | 'artifact'
+  id: string;
+  name: string;
+  description: string;
+  imageUrl: string;
+  cost: number;
+  attack?: number;
+  defense?: number;
+  rarity: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
+  type: 'creature' | 'spell' | 'artifact';
 }
 ```
 

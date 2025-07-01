@@ -9,7 +9,7 @@ For general project information, setup instructions, and development guidelines,
 ## Development Commands
 
 - `npm run dev` - Start development server
-- `npm run build` - Build for production  
+- `npm run build` - Build for production
 - `npm run test` - Run unit tests
 - `npm run storybook` - Start Storybook for component development
 - `npm run lint` - Run ESLint
@@ -18,9 +18,10 @@ For general project information, setup instructions, and development guidelines,
 ## Path Aliases
 
 Use these aliases for clean imports:
+
 - `@/*` - src directory
 - `@/components/*` - components directory
-- `@/types/*` - types directory  
+- `@/types/*` - types directory
 - `@/data/*` - data directory
 
 ## Coding Best Practices

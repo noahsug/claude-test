@@ -12,7 +12,8 @@
       "Bash(npx tailwindcss init:*)",
       "Bash(npm run build:*)",
       "Bash(timeout 10s npm run dev)",
-      "Bash(/dev/null)"
+      "Bash(/dev/null)",
+      "Bash(npm run lint)"
     ],
     "deny": []
   }
