@@ -2,35 +2,26 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## Quick Reference
 
-This project displays a list of cards styled after trading card games like Magic the Gathering and Hearthstone. The application focuses on presenting cards in an engaging, game-like interface.
+For general project information, setup instructions, and development guidelines, see [README.md](./README.md).
 
-## Design Guidelines
+## Development Commands
 
-- **Clean and Simple UI**: Keep the interface uncluttered and easy to navigate
-- **Fun, Approachable Theme**: Use engaging colors, fonts, and visual elements that feel inviting
-- **Trading Card Game Style**: Cards should evoke the look and feel of popular TCGs (Magic, Hearthstone, Pokemon, etc.)
-- **Mobile Responsive**: Ensure the interface works well on all device sizes
-- **Consistent Card Design**: All cards should follow a unified style with:
-  - Card image (artwork/illustration)
-  - Text content (name, description, stats, etc.)
-  - Consistent layout and proportions
-  - Visual hierarchy that's easy to scan
+- `npm run dev` - Start development server
+- `npm run build` - Build for production  
+- `npm run test` - Run unit tests
+- `npm run storybook` - Start Storybook for component development
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
 
-## Technology Stack
+## Path Aliases
 
-- **Vite**: Build tool and development server
-- **Preact**: UI framework
-- **TypeScript**: Type-safe JavaScript
-- **Tailwind CSS**: Utility-first CSS framework
-- **Prettier**: Code formatting
-- **Storybook**: Component documentation and development
-- **React Testing Library**: Component testing framework
-
-## Development Setup
-
-No specific build tools, package managers, or development commands have been identified yet. As the repository evolves, common commands should be documented here.
+Use these aliases for clean imports:
+- `@/*` - src directory
+- `@/components/*` - components directory
+- `@/types/*` - types directory  
+- `@/data/*` - data directory
 
 ## Coding Best Practices
 

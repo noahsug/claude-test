@@ -79,6 +79,9 @@ src/
 - **Flat Structure** - Keep directory structure shallow and intuitive
 - **Component Proximity** - Keep components close to where they're used
 - **Clear Naming** - Use descriptive names for files, components, and variables
+- **Explicit Over Implicit** - Use clear, descriptive names and avoid magic strings or numbers
+- **Small, Focused Files** - Break large files into smaller, single-purpose modules
+- **No Generic Helpers** - Avoid catch-all utility directories; place helpers close to where they're used
 
 ### Code Quality
 - **TypeScript** - Use strict type checking for reliability
