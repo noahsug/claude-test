@@ -15,7 +15,11 @@
       "Bash(/dev/null)",
       "Bash(npm run lint)",
       "Bash(git push:*)",
-      "Bash(npm run deploy:*)"
+      "Bash(npm run deploy:*)",
+      "Bash(npm run format:*)",
+      "Bash(npx gh-pages-clean:*)",
+      "Bash(npx gh-pages:*)",
+      "Bash(gh api:*)"
     ],
     "deny": []
   }
