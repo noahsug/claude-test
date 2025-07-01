@@ -1,6 +1,9 @@
 # Trading Card Display
 
-A modern web application that displays a collection of trading card game-style cards with an engaging, interactive interface inspired by popular TCGs like Magic: The Gathering and Hearthstone.
+A modern web application that displays a collection of trading card game-style cards with an
+engaging, interactive interface inspired by popular TCGs like Magic: The Gathering and Hearthstone.
+
+[View the webpage](https://noahsug.github.io/claude-test/)
 
 ## Features
 
@@ -50,10 +53,6 @@ npm run dev
 ```
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser
-
-## Live Demo
-
-View the live application at: [https://noahsug.github.io/claude-test/](https://noahsug.github.io/claude-test/)
 
 ### Available Scripts
 
