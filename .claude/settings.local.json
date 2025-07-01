@@ -6,7 +6,10 @@
       "Bash(npm create:*)",
       "Bash(mkdir:*)",
       "Bash(npm install)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init:*)"
     ],
     "deny": []
   }
