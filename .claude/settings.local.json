@@ -13,7 +13,9 @@
       "Bash(npm run build:*)",
       "Bash(timeout 10s npm run dev)",
       "Bash(/dev/null)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(git push:*)",
+      "Bash(npm run deploy:*)"
     ],
     "deny": []
   }

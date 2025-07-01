@@ -51,6 +51,10 @@ npm run dev
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
+## Live Demo
+
+View the live application at: [https://noahsug.github.io/claude-test/](https://noahsug.github.io/claude-test/)
+
 ### Available Scripts
 
 - `npm run dev` - Start development server
@@ -62,6 +66,7 @@ npm run dev
 - `npm run build-storybook` - Build Storybook for deployment
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
+- `npm run deploy` - Deploy to GitHub Pages
 
 ## Project Structure
 
