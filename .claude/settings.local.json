@@ -25,7 +25,8 @@
       "Bash(node:*)",
       "Bash(rm:*)",
       "Bash(chmod:*)",
-      "Bash(./test-puppeteer.sh:*)"
+      "Bash(./test-puppeteer.sh:*)",
+      "Bash(npm run test:*)"
     ],
     "deny": []
   }
