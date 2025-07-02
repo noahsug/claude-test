@@ -52,6 +52,9 @@ coverage/
 # Storybook build outputs
 storybook-static/
 
+# Test screenshots (generated during E2E tests)
+tests/e2e/screenshots/
+
 # Temporary folders
 tmp/
 temp/

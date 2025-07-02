@@ -80,6 +80,8 @@ Puppeteer automatically generates screenshots during tests:
 - `main-page.png` - Full page view of card grid
 - `card-detail.png` - Card detail modal view
 
+**Note**: Screenshots are saved to `tests/e2e/screenshots/` but are excluded from git tracking. They're regenerated on each test run for debugging purposes.
+
 ## Usage Examples
 
 ### Basic Page Interaction
@@ -133,7 +135,7 @@ const isVisible = await page.$('[data-testid="card-detail"]') !== null;
 2. **Check server status**: `node tests/e2e/check-server.js`
 3. **Run basic example**: `node tests/e2e/basic-example.js`
 4. **Run full E2E tests**: `npm run test:e2e`
-5. **Review screenshots**: Check `tests/e2e/screenshots/`
+5. **Review screenshots**: Check `tests/e2e/screenshots/` (generated locally)
 
 **Important**: The development server must be running on port 3001 before running any E2E tests.
 
