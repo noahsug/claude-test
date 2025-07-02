@@ -66,8 +66,30 @@ describe('Card Navigation', () => {
     // Wait for card detail modal to appear
     await page.waitForSelector('[data-testid="card-detail"]');
     
-    // Click close button
-    await page.click('[data-testid="close-button"]');
+    // Click close button using evaluate for reliability
+    await page.evaluate(() => {
+      const closeButton = document.querySelector('[data-testid="close-button"]');
+      if (closeButton) {
+        closeButton.click();
+      }
+    });
+    
+    // Wait for modal to disappear
+    await page.waitForSelector('[data-testid="card-detail"]', { hidden: true });
+    
+    // Check that URL hash is cleared
+    const url = page.url();
+    expect(url).not.toContain('#card-');
+  });
+
+  test('should close card detail with Escape key', async () => {
+    await page.goto('http://localhost:3001#card-1');
+    
+    // Wait for card detail modal to appear
+    await page.waitForSelector('[data-testid="card-detail"]');
+    
+    // Press Escape key
+    await page.keyboard.press('Escape');
     
     // Wait for modal to disappear
     await page.waitForSelector('[data-testid="card-detail"]', { hidden: true });

@@ -1,5 +1,6 @@
 import type { Card } from '@/types';
 import { CardArtwork } from './CardArtwork';
+import { useEffect } from 'preact/hooks';
 
 interface CardDetailProps {
   card: Card;
@@ -7,6 +8,17 @@ interface CardDetailProps {
 }
 
 export function CardDetail({ card, onClose }: CardDetailProps) {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   return (
     <div 
       data-testid="card-detail"
@@ -18,15 +30,17 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-6">
-          <button
-            data-testid="close-button"
-            onClick={onClose}
-            className="float-right text-white/70 hover:text-white text-2xl font-bold leading-none"
-          >
-            ×
-          </button>
+          <div className="flex justify-end mb-4">
+            <button
+              data-testid="close-button"
+              onClick={onClose}
+              className="text-white/70 hover:text-white text-2xl font-bold leading-none w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+            >
+              ×
+            </button>
+          </div>
           
-          <div className="clear-both">
+          <div>
             <div className="aspect-[3/4] rounded-lg mb-4 overflow-hidden">
               <CardArtwork card={card} className="w-full h-full" />
             </div>

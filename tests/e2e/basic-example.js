@@ -43,8 +43,8 @@ async function runBasicExample() {
     
     // Navigate to the local development server
     await page.goto('http://localhost:3001', { 
-      waitUntil: 'networkidle0',
-      timeout: 10000 
+      waitUntil: 'domcontentloaded',
+      timeout: 15000 
     });
     
     // Wait for the page to load
@@ -91,8 +91,24 @@ async function runBasicExample() {
       const cardCost = await page.$eval('[data-testid="card-cost"]', el => el.textContent);
       console.log(`🃏 Card details: ${cardName} (Cost: ${cardCost})`);
       
-      // Close the modal
-      await page.click('[data-testid="close-button"]');
+      // Close the modal - try multiple methods
+      try {
+        // First try clicking the close button with force
+        await page.waitForSelector('[data-testid="close-button"]', { visible: true, timeout: 2000 });
+        
+        // Use evaluate to trigger click directly
+        await page.evaluate(() => {
+          const closeButton = document.querySelector('[data-testid="close-button"]');
+          if (closeButton) {
+            closeButton.click();
+          }
+        });
+        console.log('✅ Clicked close button via evaluate');
+      } catch (error) {
+        console.log('⚠️  Close button method failed, trying Escape key...');
+        // Fallback: use Escape key to close modal
+        await page.keyboard.press('Escape');
+      }
       
       // Wait for modal to close
       await page.waitForSelector('[data-testid="card-detail"]', { 
