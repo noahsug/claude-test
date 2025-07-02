@@ -29,16 +29,16 @@
 
 ### Base Components
 
-- [ ] Update main App component to display card grid instead of counter demo
-- [ ] Set up basic hash-based routing for card details (e.g., `#card-1`)
+- [x] Update main App component to display card grid instead of counter demo
+- [x] Set up basic hash-based routing for card details (e.g., `#card-1`)
   - Use simple `window.location.hash` approach to avoid adding router dependency
   - Cards should be clickable and update URL hash
   - Support back button navigation
-- [ ] Create layout components:
-  - [ ] Header component with app title and gradient background
-  - [ ] CardGrid component to display all cards in responsive grid
-  - [ ] CardDetail component to show expanded card view when hash is present
-- [ ] Implement basic navigation between card grid and card detail views
+- [x] Create layout components:
+  - [x] Header component with app title and gradient background
+  - [x] CardGrid component to display all cards in responsive grid
+  - [x] CardDetail component to show expanded card view when hash is present
+- [x] Implement basic navigation between card grid and card detail views
 
 ### Technical Decisions Made
 

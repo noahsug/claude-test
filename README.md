@@ -130,6 +130,7 @@ Sample cards are available in `src/data/sample-cards.ts` with placeholder images
 ## Navigation & Routing
 
 The app uses simple hash-based routing for card details:
+
 - Main view: `/` (shows all cards in grid)
 - Card detail: `/#card-1` (shows expanded view of card with ID "1")
 - Back button support included for seamless navigation
