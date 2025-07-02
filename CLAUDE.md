@@ -18,6 +18,7 @@ For a list of tasks explaining how to implement this project, see [TASKS.md](./T
 - `npm run storybook` - Start Storybook for component development
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
+- `npm run test:e2e` - Run end-to-end tests with Puppeteer
 
 ## Path Aliases
 

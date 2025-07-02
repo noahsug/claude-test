@@ -13,6 +13,8 @@ export function CardGrid({ cards, onCardClick }: CardGridProps) {
         {cards.map((card) => (
           <div
             key={card.id}
+            data-testid="card"
+            data-card-id={card.id}
             onClick={() => onCardClick(card.id)}
             className="bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-lg hover:shadow-xl hover:bg-white/15 transition-all duration-200 cursor-pointer transform hover:scale-105"
           >

@@ -65,6 +65,7 @@ npm run dev
 - `npm run build-storybook` - Build Storybook for deployment
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
+- `npm run test:e2e` - Run end-to-end tests with Puppeteer
 - `npm run deploy` - Deploy to GitHub Pages
 
 ## Project Structure
@@ -78,6 +79,9 @@ src/
 ├── app.tsx        # Main application component
 ├── main.tsx       # Application entry point
 └── index.css      # Global styles (Tailwind imports)
+
+tests/
+└── e2e/           # End-to-end tests with Puppeteer
 ```
 
 ## Development Guidelines
@@ -152,6 +156,19 @@ The app uses simple hash-based routing for card details:
 3. Update Storybook stories for visual components
 4. Run linting and formatting before committing
 5. Use clear, descriptive commit messages
+
+## End-to-End Testing
+
+This project uses Puppeteer for browser automation and E2E testing. See [PUPPETEER.md](./PUPPETEER.md) for detailed setup and usage instructions.
+
+**Quick start:**
+```bash
+# Run interactive example
+node tests/e2e/basic-example.js
+
+# Run full E2E test suite  
+npm run test:e2e
+```
 
 ## License
 

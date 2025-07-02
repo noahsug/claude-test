@@ -9,6 +9,7 @@ interface CardDetailProps {
 export function CardDetail({ card, onClose }: CardDetailProps) {
   return (
     <div 
+      data-testid="card-detail"
       className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
       onClick={onClose}
     >
@@ -18,6 +19,7 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
       >
         <div className="p-6">
           <button
+            data-testid="close-button"
             onClick={onClose}
             className="float-right text-white/70 hover:text-white text-2xl font-bold leading-none"
           >
@@ -31,8 +33,8 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
             
             <div className="text-white space-y-4">
               <div className="flex justify-between items-start">
-                <h2 className="text-2xl font-bold">{card.name}</h2>
-                <span className="bg-yellow-500 text-black text-lg font-bold px-3 py-1 rounded-full">
+                <h2 data-testid="card-name" className="text-2xl font-bold">{card.name}</h2>
+                <span data-testid="card-cost" className="bg-yellow-500 text-black text-lg font-bold px-3 py-1 rounded-full">
                   {card.cost}
                 </span>
               </div>
@@ -65,7 +67,7 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
               
               <div>
                 <h3 className="text-lg font-semibold mb-2">Description</h3>
-                <p className="text-white/90 leading-relaxed">
+                <p data-testid="card-description" className="text-white/90 leading-relaxed">
                   {card.description}
                 </p>
               </div>
