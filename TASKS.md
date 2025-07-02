@@ -23,15 +23,29 @@
 
 ### Data Structure
 
-- [ ] Define TypeScript interfaces for card data
-- [ ] Create sample card data (JSON or TypeScript constants)
-- [ ] Plan card properties (name, image, description, stats, rarity)
+- [x] Define TypeScript interfaces for card data (Card interface completed)
+- [x] Create sample card data (4 sample cards with placeholder images)
+- [x] Plan card properties (name, image, description, stats, rarity)
 
 ### Base Components
 
-- [ ] Create main App component
-- [ ] Set up basic routing (clicking the a card updates the URL)
-- [ ] Create layout components (header, main content area)
+- [ ] Update main App component to display card grid instead of counter demo
+- [ ] Set up basic hash-based routing for card details (e.g., `#card-1`)
+  - Use simple `window.location.hash` approach to avoid adding router dependency
+  - Cards should be clickable and update URL hash
+  - Support back button navigation
+- [ ] Create layout components:
+  - [ ] Header component with app title and gradient background
+  - [ ] CardGrid component to display all cards in responsive grid
+  - [ ] CardDetail component to show expanded card view when hash is present
+- [ ] Implement basic navigation between card grid and card detail views
+
+### Technical Decisions Made
+
+- **Routing**: Use hash-based routing (`#card-1`) for simplicity, no external router needed
+- **Layout**: Keep gradient background theme, header with title, main content area for cards
+- **Card Detail**: Show as overlay/modal when URL hash matches card ID
+- **Images**: Using placeholder images for now, will replace with actual card art later
 
 ## Phase 3: Card System
 
