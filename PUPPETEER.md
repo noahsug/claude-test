@@ -12,7 +12,7 @@ npm install puppeteer --save-dev
 
 ## Configuration
 
-The project includes a `puppeteer.config.js` file with default settings:
+The project includes a `puppeteer.config.cjs` file with default settings:
 
 - **Headless mode**: Enabled by default for CI/CD
 - **Viewport**: 1080x1024 pixels
@@ -129,10 +129,13 @@ const isVisible = await page.$('[data-testid="card-detail"]') !== null;
 
 ## Development Workflow
 
-1. **Start dev server**: `npm run dev`
-2. **Run basic example**: `node tests/e2e/basic-example.js`
-3. **Run full E2E tests**: `npm run test:e2e`
-4. **Review screenshots**: Check `tests/e2e/screenshots/`
+1. **Start dev server**: `npm run dev` (required for all tests)
+2. **Check server status**: `node tests/e2e/check-server.js`
+3. **Run basic example**: `node tests/e2e/basic-example.js`
+4. **Run full E2E tests**: `npm run test:e2e`
+5. **Review screenshots**: Check `tests/e2e/screenshots/`
+
+**Important**: The development server must be running on port 3001 before running any E2E tests.
 
 ## Troubleshooting
 

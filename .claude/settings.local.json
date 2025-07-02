@@ -21,7 +21,11 @@
       "Bash(npx gh-pages:*)",
       "Bash(gh api:*)",
       "Bash(npm run dev:*)",
-      "WebFetch(domain:pptr.dev)"
+      "WebFetch(domain:pptr.dev)",
+      "Bash(node:*)",
+      "Bash(rm:*)",
+      "Bash(chmod:*)",
+      "Bash(./test-puppeteer.sh:*)"
     ],
     "deny": []
   }

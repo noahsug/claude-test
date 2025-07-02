@@ -3,7 +3,7 @@
  * @see https://pptr.dev/guides/configuration
  */
 
-export default {
+module.exports = {
   // Launch options for the browser
   launch: {
     headless: true,

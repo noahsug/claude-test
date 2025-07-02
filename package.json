@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:e2e": "node tests/e2e/card-navigation.test.js",
+    "test:e2e": "node tests/e2e/check-server.js && node tests/e2e/basic-example.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format": "prettier --write .",

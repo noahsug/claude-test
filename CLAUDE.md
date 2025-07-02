@@ -38,8 +38,3 @@ Use these aliases for clean imports:
 - **Explicit Over Implicit**: Use clear, descriptive names and avoid magic strings or numbers
 - **Small, Focused Files**: Break large files into smaller, single-purpose modules
 - **Consistent Naming**: Use consistent patterns for files, components, and variables
-
-## Architecture
-
-No code architecture has been established yet. This section should be updated when the codebase
-develops structure and patterns.

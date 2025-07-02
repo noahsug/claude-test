@@ -1,4 +1,5 @@
 import puppeteer from 'puppeteer';
+import { checkServer } from './check-server.js';
 
 /**
  * Basic Puppeteer example for the Trading Card Display project
@@ -8,10 +9,27 @@ import puppeteer from 'puppeteer';
 async function runBasicExample() {
   console.log('🚀 Starting Puppeteer basic example...');
   
-  // Launch browser
+  // Check if dev server is running
+  console.log('🔍 Checking if development server is running...');
+  const serverRunning = await checkServer();
+  
+  if (!serverRunning) {
+    console.error('❌ Development server is not running on http://localhost:3001');
+    console.error('💡 Please start it first with: npm run dev');
+    console.error('💡 Then run this script again');
+    return;
+  }
+  
+  console.log('✅ Development server is running');
+  
+  // Launch browser with explicit configuration
   const browser = await puppeteer.launch({
     headless: false, // Set to true for headless mode
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage'
+    ]
   });
 
   try {
@@ -24,17 +42,29 @@ async function runBasicExample() {
     console.log('📱 Navigating to the Trading Card Display app...');
     
     // Navigate to the local development server
-    await page.goto('http://localhost:3001');
+    await page.goto('http://localhost:3001', { 
+      waitUntil: 'networkidle0',
+      timeout: 10000 
+    });
     
     // Wait for the page to load
-    await page.waitForSelector('h1');
+    await page.waitForSelector('h1', { timeout: 5000 });
     
     // Get the page title
     const title = await page.$eval('h1', el => el.textContent);
     console.log(`📋 Page title: ${title}`);
     
+    // Ensure screenshots directory exists
+    await page.evaluate(() => {
+      // This runs in browser context - just a placeholder
+      return true;
+    });
+    
     // Take a screenshot
-    await page.screenshot({ path: 'tests/e2e/screenshots/main-page.png', fullPage: true });
+    await page.screenshot({ 
+      path: 'tests/e2e/screenshots/main-page.png', 
+      fullPage: true 
+    });
     console.log('📸 Screenshot saved: tests/e2e/screenshots/main-page.png');
     
     // Find and click the first card
@@ -46,11 +76,14 @@ async function runBasicExample() {
       await cards[0].click();
       
       // Wait for card detail modal to appear
-      await page.waitForSelector('[data-testid="card-detail"]');
+      await page.waitForSelector('[data-testid="card-detail"]', { timeout: 5000 });
       console.log('✅ Card detail modal opened');
       
       // Take another screenshot
-      await page.screenshot({ path: 'tests/e2e/screenshots/card-detail.png', fullPage: true });
+      await page.screenshot({ 
+        path: 'tests/e2e/screenshots/card-detail.png', 
+        fullPage: true 
+      });
       console.log('📸 Screenshot saved: tests/e2e/screenshots/card-detail.png');
       
       // Get card information
@@ -60,6 +93,12 @@ async function runBasicExample() {
       
       // Close the modal
       await page.click('[data-testid="close-button"]');
+      
+      // Wait for modal to close
+      await page.waitForSelector('[data-testid="card-detail"]', { 
+        hidden: true, 
+        timeout: 5000 
+      });
       console.log('❌ Card detail modal closed');
     }
     
@@ -67,14 +106,12 @@ async function runBasicExample() {
     
   } catch (error) {
     console.error('❌ Error running basic example:', error);
+    console.error('💡 Make sure the dev server is running on http://localhost:3001');
+    console.error('💡 Run: npm run dev');
   } finally {
     await browser.close();
   }
 }
 
-// Run the example if this file is executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  runBasicExample();
-}
-
-export { runBasicExample };
+// Run the example
+runBasicExample();

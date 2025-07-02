@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     // automatically open the app in the browser on server start
     open: true,
-    port: 3000,
+    port: 3001,
   },
   plugins: [preact()],
   resolve: {
