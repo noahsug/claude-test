@@ -8,6 +8,7 @@ This project uses CSS-generated artwork for trading cards via the `CardArtwork` 
 - **Emoji Icons**: Large thematic emojis for visual appeal (🍌 🔌 🍞 🧽)
 - **Dynamic Styling**: Colors and effects match card rarity and type
 - **No External Files**: All artwork is generated via CSS/JSX
+- **Pixel Art Style**: Designs should embrace a retro pixel art aesthetic with crisp, blocky visuals
 
 ## Card Artwork Details
 
@@ -32,8 +33,9 @@ Use services like:
 
 **Prompt suggestions**:
 
-- "Toaster appliance trading card art, quirky fun style, household object, 200x280 pixels"
-- "Banana fruit trading card art, playful cartoon style, bright colors, 200x280 pixels"
+- "Toaster appliance trading card art, pixel art style, quirky fun, household object, bright colors, 200x280 pixels"
+- "Banana fruit trading card art, pixel art style, playful retro aesthetic, bright vibrant colors, 200x280 pixels"
+- "Power cord trading card art, 8-bit pixel art style, bright colors, household electronics, 200x280 pixels"
 
 ### Option 2: Free Stock Images
 
@@ -63,11 +65,11 @@ Download from:
 
 ## Image Specifications
 
-- **Format**: PNG or JPG recommended
+- **Format**: PNG recommended (preserves pixel art sharpness)
 - **Dimensions**: 200x280 pixels (5:7 aspect ratio)
-- **Style**: Quirky, fun aesthetic with household objects and fruits
-- **Quality**: High-resolution for crisp display
-- **Theme**: Match card type (household appliances, fruits, everyday objects)
+- **Style**: Pixel art aesthetic - quirky, fun household objects and fruits with bright, vibrant colors
+- **Quality**: Crisp pixel-perfect display with no anti-aliasing
+- **Theme**: Match card type (household appliances, fruits, everyday objects) in retro 8-bit/16-bit style
 
 ## Fallback Strategy
 

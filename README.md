@@ -143,10 +143,11 @@ The app uses simple hash-based routing for card details:
 
 - **Quirky Fun Theme** - Cards feature amusing, everyday objects rather than traditional fantasy themes
 - **Household & Food Items** - Think toasters, bananas, rubber ducks, kitchen utensils, etc.
+- **Pixel Art Aesthetic** - Embrace retro 8-bit/16-bit style with crisp, blocky visuals and bright, vibrant colors
 - **Playful Approach** - Cards should be whimsical and bring a smile to users' faces
 - **Mobile First** - Design for mobile devices, then enhance for larger screens
-- **Fun Theme** - Use engaging colors, fonts, and visual elements
-- **Consistent Styling** - All cards follow a unified design language
+- **Bright Colors** - Use engaging, vibrant colors that pop in pixel art style
+- **Consistent Styling** - All cards follow a unified design language with pixel-perfect precision
 - **Clear Hierarchy** - Easy-to-scan layout with proper visual hierarchy
 
 ## Contributing
