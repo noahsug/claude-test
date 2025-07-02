@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/preact';
 import { CardGrid } from '../components/CardGrid';
 import type { Card } from '../types';
@@ -102,7 +102,7 @@ describe('CardGrid Component', () => {
       render(<CardGrid cards={mockCards} onCardClick={mockOnCardClick} />);
       
       const firstCard = screen.getAllByTestId('card')[0];
-      firstCard.click();
+      firstCard?.click();
       
       expect(mockOnCardClick).toHaveBeenCalledWith('1');
     });
@@ -159,7 +159,7 @@ describe('CardGrid Component', () => {
 
   describe('Single Card Rendering', () => {
     it('renders single card correctly', () => {
-      const singleCard = [mockCards[0]];
+      const singleCard = mockCards.slice(0, 1);
       render(<CardGrid cards={singleCard} onCardClick={mockOnCardClick} />);
       
       const cards = screen.getAllByTestId('card');

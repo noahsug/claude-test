@@ -2,46 +2,6 @@ import type { Meta, StoryObj } from '@storybook/preact';
 import { Card } from '../components/Card';
 import type { Card as CardType } from '../types';
 
-const meta = {
-  title: 'Components/Card',
-  component: Card,
-  parameters: {
-    layout: 'centered',
-    docs: {
-      description: {
-        component: 'Individual trading card component displaying quirky themed cards with hover effects and interactive elements.',
-      },
-    },
-  },
-  tags: ['autodocs'],
-  argTypes: {
-    onClick: { action: 'clicked' },
-    className: {
-      control: 'text',
-      description: 'Additional CSS classes to apply to the card',
-    },
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ 
-        background: 'linear-gradient(135deg, #4c1d95 0%, #1e3a8a 50%, #3730a3 100%)',
-        padding: '2rem',
-        minHeight: '400px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
-        <div style={{ maxWidth: '300px' }}>
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
-} satisfies Meta<typeof Card>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
 // Sample card data for stories
 const electricToaster: CardType = {
   id: '1',
@@ -99,35 +59,67 @@ const longNameCard: CardType = {
   type: 'creature',
 };
 
-// Stories
-export const Common: Story = {
+const meta = {
+  title: 'Components/Card',
+  component: Card,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'Individual trading card component displaying quirky themed cards with hover effects and interactive elements.',
+      },
+    },
+  },
+  tags: ['autodocs'],
   args: {
     card: electricToaster,
   },
-};
-
-export const Uncommon: Story = {
-  args: {
-    card: powerCord,
+  argTypes: {
+    card: {
+      control: 'object',
+      description: 'Card data object containing all card information',
+    },
+    onClick: { action: 'clicked' },
+    className: {
+      control: 'text',
+      description: 'Additional CSS classes to apply to the card',
+    },
   },
-};
+  decorators: [
+    (Story) => (
+      <div style={{ 
+        background: 'linear-gradient(135deg, #4c1d95 0%, #1e3a8a 50%, #3730a3 100%)',
+        padding: '2rem',
+        minHeight: '400px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <div style={{ maxWidth: '300px' }}>
+          <Story />
+        </div>
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof Card>;
 
-export const Rare: Story = {
-  args: {
-    card: mightyBanana,
-  },
-};
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Legendary: Story = {
-  args: {
-    card: dishSpongeLord,
-  },
-};
+// Stories
+export const Common: Story = {};
+(Common as any).args = { card: electricToaster };
+
+export const Uncommon: Story = {};
+(Uncommon as any).args = { card: powerCord };
+
+export const Rare: Story = {};
+(Rare as any).args = { card: mightyBanana };
+
+export const Legendary: Story = {};
+(Legendary as any).args = { card: dishSpongeLord };
 
 export const Spell: Story = {
-  args: {
-    card: electricToaster,
-  },
   parameters: {
     docs: {
       description: {
@@ -136,11 +128,9 @@ export const Spell: Story = {
     },
   },
 };
+(Spell as any).args = { card: electricToaster };
 
 export const Creature: Story = {
-  args: {
-    card: mightyBanana,
-  },
   parameters: {
     docs: {
       description: {
@@ -149,11 +139,9 @@ export const Creature: Story = {
     },
   },
 };
+(Creature as any).args = { card: mightyBanana };
 
 export const Artifact: Story = {
-  args: {
-    card: powerCord,
-  },
   parameters: {
     docs: {
       description: {
@@ -162,11 +150,9 @@ export const Artifact: Story = {
     },
   },
 };
+(Artifact as any).args = { card: powerCord };
 
 export const LongName: Story = {
-  args: {
-    card: longNameCard,
-  },
   parameters: {
     docs: {
       description: {
@@ -175,6 +161,7 @@ export const LongName: Story = {
     },
   },
 };
+(LongName as any).args = { card: longNameCard };
 
 export const AllRarities: Story = {
   render: () => (
@@ -195,10 +182,6 @@ export const AllRarities: Story = {
 };
 
 export const CustomClassName: Story = {
-  args: {
-    card: mightyBanana,
-    className: 'ring-2 ring-yellow-400',
-  },
   parameters: {
     docs: {
       description: {
@@ -207,3 +190,4 @@ export const CustomClassName: Story = {
     },
   },
 };
+(CustomClassName as any).args = { card: mightyBanana, className: 'ring-2 ring-yellow-400' };
