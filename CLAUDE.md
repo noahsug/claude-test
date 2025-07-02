@@ -4,7 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Quick Reference
 
-For general project information, setup instructions, and development guidelines, see [README.md](./README.md).
+For general project information, setup instructions, and development guidelines, see
+[README.md](./README.md).
 
 ## Development Commands
 
