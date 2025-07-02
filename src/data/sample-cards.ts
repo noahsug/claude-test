@@ -3,8 +3,8 @@ import type { Card } from '@/types';
 export const sampleCards: Card[] = [
   {
     id: '1',
-    name: 'Lightning Bolt',
-    description: 'Deal 3 damage to any target. The raw power of the storm condensed into pure magical energy.',
+    name: 'Electric Toaster',
+    description: 'Deal 3 damage to any target. Perfect for breakfast battles and crispy comebacks.',
     imageUrl: '/src/assets/images/cards/1.png', // CSS-based artwork via CardArtwork component
     cost: 1,
     rarity: 'common',
@@ -12,8 +12,8 @@ export const sampleCards: Card[] = [
   },
   {
     id: '2',
-    name: 'Forest Guardian',
-    description: 'A mighty protector of the ancient woods. Its roots run deep, drawing strength from the earth itself.',
+    name: 'Mighty Banana',
+    description: 'A potassium-powered protector of the fruit bowl. Slippery when peeled.',
     imageUrl: '/src/assets/images/cards/2.png', // CSS-based artwork via CardArtwork component
     cost: 4,
     attack: 4,
@@ -23,8 +23,8 @@ export const sampleCards: Card[] = [
   },
   {
     id: '3',
-    name: 'Crystal Sword',
-    description: 'Equipped creature gets +2/+1. Forged from enchanted crystal, this blade never dulls.',
+    name: 'Power Cord',
+    description: 'Equipped creature gets +2/+1. Provides the spark needed for victory.',
     imageUrl: '/src/assets/images/cards/3.png', // CSS-based artwork via CardArtwork component
     cost: 2,
     rarity: 'uncommon',
@@ -32,8 +32,8 @@ export const sampleCards: Card[] = [
   },
   {
     id: '4',
-    name: 'Dragon Lord',
-    description: 'Flying. When Dragon Lord enters, deal 2 damage to all enemies. Ancient ruler of the skies.',
+    name: 'Dish Sponge Lord',
+    description: 'Absorb all damage. When Dish Sponge Lord enters, clean up 2 enemy creatures.',
     imageUrl: '/src/assets/images/cards/4.png', // CSS-based artwork via CardArtwork component
     cost: 8,
     attack: 8,

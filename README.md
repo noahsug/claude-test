@@ -1,13 +1,13 @@
 # Trading Card Display
 
 A modern web application that displays a collection of trading card game-style cards with an
-engaging, interactive interface inspired by popular TCGs like Magic: The Gathering and Hearthstone.
+engaging, interactive interface featuring quirky, fun themes like household objects, fruits, and everyday items.
 
 [View the webpage](https://noahsug.github.io/claude-test/)
 
 ## Features
 
-- **Trading Card Game Aesthetic** - Cards designed with authentic TCG styling
+- **Quirky Fun Aesthetic** - Cards feature amusing themes like household objects and fruits
 - **Responsive Design** - Optimized for mobile, tablet, and desktop
 - **Clean UI** - Uncluttered interface with fun, approachable theme
 - **Interactive Cards** - Hover effects and smooth animations
@@ -137,8 +137,9 @@ The app uses simple hash-based routing for card details:
 
 ## Design Guidelines
 
-- **Trading Card Game Aesthetic** - Cards should evoke the look and feel of popular TCGs
-- **Quirky Cards** - Avoid generic high fantasy, prefer quirky card themes like food or appliances
+- **Quirky Fun Theme** - Cards feature amusing, everyday objects rather than traditional fantasy themes
+- **Household & Food Items** - Think toasters, bananas, rubber ducks, kitchen utensils, etc.
+- **Playful Approach** - Cards should be whimsical and bring a smile to users' faces
 - **Mobile First** - Design for mobile devices, then enhance for larger screens
 - **Fun Theme** - Use engaging colors, fonts, and visual elements
 - **Consistent Styling** - All cards follow a unified design language

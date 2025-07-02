@@ -72,10 +72,10 @@
 
 ### Visual Design
 
-- [ ] Implement trading card game visual theme
+- [ ] Implement quirky fun visual theme with household objects and fruits
 - [ ] Create card border and background styles
 - [ ] Add typography styling
-- [ ] Implement color scheme
+- [ ] Implement bright, cheerful color scheme
 - [ ] Add card rarity visual indicators
 
 ### Responsive Design

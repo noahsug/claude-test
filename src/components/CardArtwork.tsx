@@ -8,33 +8,33 @@ interface CardArtworkProps {
 export function CardArtwork({ card, className = '' }: CardArtworkProps) {
   const getArtworkStyle = (card: Card) => {
     switch (card.id) {
-      case '1': // Lightning Bolt
+      case '1': // Electric Toaster
         return {
-          background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 25%, #d97706 50%, #b91c1c 75%, #7c2d12 100%)',
-          content: '⚡',
+          background: 'linear-gradient(135deg, #c0c0c0 0%, #ffd700 25%, #ff8c00 50%, #ff4500 75%, #8b4513 100%)',
+          content: '🍞',
           color: '#ffffff',
-          textShadow: '0 0 20px #fbbf24, 0 0 40px #f59e0b',
+          textShadow: '0 0 20px #ffd700, 0 0 40px #ff8c00',
         };
-      case '2': // Forest Guardian
+      case '2': // Mighty Banana
         return {
-          background: 'linear-gradient(135deg, #065f46 0%, #047857 25%, #10b981 50%, #34d399 75%, #6ee7b7 100%)',
-          content: '🌲',
+          background: 'linear-gradient(135deg, #228B22 0%, #32CD32 25%, #FFFF00 50%, #FFD700 75%, #FFA500 100%)',
+          content: '🍌',
           color: '#ffffff',
-          textShadow: '0 0 20px #10b981',
+          textShadow: '0 0 20px #FFFF00',
         };
-      case '3': // Crystal Sword
+      case '3': // Power Cord
         return {
-          background: 'linear-gradient(135deg, #1e1b4b 0%, #3730a3 25%, #6366f1 50%, #a5b4fc 75%, #e0e7ff 100%)',
-          content: '⚔️',
+          background: 'linear-gradient(135deg, #2F2F2F 0%, #696969 25%, #A9A9A9 50%, #D3D3D3 75%, #F5F5F5 100%)',
+          content: '🔌',
           color: '#ffffff',
-          textShadow: '0 0 20px #6366f1',
+          textShadow: '0 0 20px #A9A9A9',
         };
-      case '4': // Dragon Lord
+      case '4': // Dish Sponge Lord
         return {
-          background: 'linear-gradient(135deg, #7f1d1d 0%, #dc2626 25%, #ef4444 50%, #fca5a5 75%, #fed7d7 100%)',
-          content: '🐉',
+          background: 'linear-gradient(135deg, #0066CC 0%, #3399FF 25%, #FFFF00 50%, #FFD700 75%, #32CD32 100%)',
+          content: '🧽',
           color: '#ffffff',
-          textShadow: '0 0 20px #dc2626, 0 0 40px #ef4444',
+          textShadow: '0 0 20px #3399FF, 0 0 40px #FFFF00',
         };
       default:
         return {
