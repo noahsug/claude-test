@@ -5,6 +5,11 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/claude-test/' : '/',
+  server: {
+    // automatically open the app in the browser on server start
+    open: true,
+    port: 3000,
+  },
   plugins: [preact()],
   resolve: {
     alias: {
