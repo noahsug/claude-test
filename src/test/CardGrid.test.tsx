@@ -48,7 +48,7 @@ describe('CardGrid Component', () => {
       
       const gridContainer = container.firstElementChild;
       expect(gridContainer).toBeInTheDocument();
-      expect(gridContainer).toHaveClass('max-w-6xl', 'mx-auto', 'px-4', 'pb-8');
+      expect(gridContainer).toHaveClass('container', 'mx-auto', 'px-4', 'pb-8');
     });
 
     it('renders all provided cards', () => {
@@ -74,11 +74,12 @@ describe('CardGrid Component', () => {
       const gridElement = container.firstElementChild?.firstElementChild;
       expect(gridElement).toHaveClass(
         'grid',
-        'grid-cols-1',
+        'grid-cols-2',
         'sm:grid-cols-2',
         'md:grid-cols-3',
         'lg:grid-cols-4',
-        'gap-6'
+        'gap-4',
+        'w-full'
       );
     });
 
@@ -124,7 +125,7 @@ describe('CardGrid Component', () => {
       const { container } = render(<CardGrid cards={mockCards} onCardClick={mockOnCardClick} className={customClass} />);
       
       const gridContainer = container.firstElementChild;
-      expect(gridContainer).toHaveClass('max-w-6xl', 'mx-auto', 'px-4', 'pb-8', customClass);
+      expect(gridContainer).toHaveClass('container', 'mx-auto', 'px-4', 'pb-8', customClass);
     });
   });
 
