@@ -157,6 +157,11 @@ The app uses simple hash-based routing for card details:
 4. Run linting and formatting before committing
 5. Use clear, descriptive commit messages
 
+## Development Planning
+
+- **[TASKS.md](./TASKS.md)** - Complete project roadmap and task breakdown
+- **[PHASE3_PLAN.md](./PHASE3_PLAN.md)** - Detailed Phase 3 implementation strategy and architecture decisions
+
 ## End-to-End Testing
 
 This project uses Puppeteer for browser automation and E2E testing. See [PUPPETEER.md](./PUPPETEER.md) for detailed setup and usage instructions.

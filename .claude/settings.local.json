@@ -27,7 +27,8 @@
       "Bash(chmod:*)",
       "Bash(./test-puppeteer.sh:*)",
       "Bash(npm run test:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(pkill:*)"
     ],
     "deny": []
   }

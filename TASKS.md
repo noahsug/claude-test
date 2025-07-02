@@ -47,26 +47,48 @@
 - **Card Detail**: Show as overlay/modal when URL hash matches card ID
 - **Images**: Using placeholder images for now, will replace with actual card art later
 
-## Phase 3: Card System
+## Phase 3: Card System Refactoring
 
-### Card Component
+### Card Component Extraction
 
-- [ ] Design and implement base Card component
-- [ ] Add card image display
-- [ ] Implement card text content layout
-- [ ] Add hover effects and animations
-- [ ] Make cards responsive for different screen sizes
+- [ ] Extract individual Card component from CardGrid inline implementation
+- [ ] Move card image display, text layout, and styling to Card component
+- [ ] Preserve existing hover effects and animations in Card component
+- [ ] Ensure Card component is responsive and reusable
 - [ ] Create Card component Storybook stories
-- [ ] Write unit tests for Card component
+- [ ] Write comprehensive unit tests for Card component
 
-### Card List/Grid
+### CardGrid Refactoring
 
-- [ ] Create CardList/CardGrid component
-- [ ] Implement responsive grid layout
-- [ ] Add card spacing and alignment
-- [ ] Verify grid layout works on different breakpoints
-- [ ] Create CardGrid component Storybook stories
-- [ ] Write unit tests for CardGrid component
+- [x] CardGrid component exists but needs refactoring
+- [ ] Refactor CardGrid to use the new Card component
+- [ ] Clean up CardGrid to focus only on grid layout and spacing
+- [ ] Verify responsive grid layout works on all breakpoints (sm/md/lg/xl)
+- [ ] Optimize CardGrid performance for large card sets
+- [ ] Create updated CardGrid component Storybook stories
+- [ ] Update existing CardGrid unit tests
+
+### Component Architecture Decisions
+
+**Current State:**
+
+- CardGrid: Handles both grid layout AND individual card rendering (needs separation)
+- CardArtwork: Handles visual artwork generation ✓
+- CardDetail: Handles modal display ✓
+
+**Target Architecture:**
+
+- **Card**: Individual card component (name, cost, stats, artwork, hover effects)
+- **CardGrid**: Grid container component (layout, spacing, responsiveness)
+- **CardArtwork**: Visual artwork component (unchanged) ✓
+- **CardDetail**: Modal detail view (unchanged) ✓
+
+**Benefits:**
+
+- Better component reusability (Card can be used elsewhere)
+- Cleaner separation of concerns
+- Easier testing and Storybook development
+- Better performance with React.memo potential
 
 ## Phase 4: Styling and Theme
 
