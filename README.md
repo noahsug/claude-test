@@ -128,6 +128,7 @@ interface Card {
 ## Design Guidelines
 
 - **Trading Card Game Aesthetic** - Cards should evoke the look and feel of popular TCGs
+- **Quirky Cards** - Avoid generic high fantasy, prefer quirky card themes like food or appliances
 - **Mobile First** - Design for mobile devices, then enhance for larger screens
 - **Fun Theme** - Use engaging colors, fonts, and visual elements
 - **Consistent Styling** - All cards follow a unified design language
