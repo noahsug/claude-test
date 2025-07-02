@@ -1,5 +1,4 @@
 import type { Card } from '@/types';
-import { CardArtwork } from './CardArtwork';
 import { useEffect } from 'preact/hooks';
 
 interface CardDetailProps {
@@ -42,7 +41,11 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
           
           <div>
             <div className="aspect-[3/4] rounded-lg mb-4 overflow-hidden">
-              <CardArtwork card={card} className="w-full h-full" />
+              <img 
+                src={card.imageUrl} 
+                alt={card.name}
+                className="w-full h-full object-cover"
+              />
             </div>
             
             <div className="text-white space-y-4">

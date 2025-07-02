@@ -1,5 +1,4 @@
 import type { Card as CardType } from '@/types';
-import { CardArtwork } from './CardArtwork';
 import { memo } from 'preact/compat';
 
 interface CardProps {
@@ -17,7 +16,11 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
       className={`bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-lg hover:shadow-xl hover:bg-white/15 transition-all duration-200 cursor-pointer transform hover:scale-105 ${className}`}
     >
       <div className="aspect-[3/4] rounded-lg mb-3 overflow-hidden">
-        <CardArtwork card={card} className="w-full h-full" />
+        <img 
+          src={card.imageUrl} 
+          alt={card.name}
+          className="w-full h-full object-cover"
+        />
       </div>
       <div className="text-white">
         <div className="flex justify-between items-start mb-2">
