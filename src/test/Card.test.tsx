@@ -4,7 +4,7 @@ import { Card } from '../components/Card';
 import type { Card as CardType } from '../types';
 
 const mockSpellCard: CardType = {
-  id: '1',
+  id: 'toaster',
   name: 'Electric Toaster',
   description: 'Deal 3 damage to any target. Perfect for breakfast battles.',
   imageUrl: '/test1.png',
@@ -14,7 +14,7 @@ const mockSpellCard: CardType = {
 };
 
 const mockCreatureCard: CardType = {
-  id: '2',
+  id: 'banana',
   name: 'Mighty Banana',
   description: 'A potassium-powered protector of the fruit bowl.',
   imageUrl: '/test2.png',
@@ -26,7 +26,7 @@ const mockCreatureCard: CardType = {
 };
 
 const mockLegendaryCard: CardType = {
-  id: '4',
+  id: 'sponge',
   name: 'Dish Sponge Lord',
   description: 'Absorb all damage. When Dish Sponge Lord enters, clean up 2 enemy creatures.',
   imageUrl: '/test4.png',
@@ -59,7 +59,7 @@ describe('Card Component', () => {
       
       const cardElement = screen.getByTestId('card');
       expect(cardElement).toBeInTheDocument();
-      expect(cardElement).toHaveAttribute('data-card-id', '1');
+      expect(cardElement).toHaveAttribute('data-card-id', 'toaster');
     });
 
     it('applies custom className when provided', () => {
@@ -117,7 +117,7 @@ describe('Card Component', () => {
       const cardElement = screen.getByTestId('card');
       fireEvent.click(cardElement);
       
-      expect(mockOnClick).toHaveBeenCalledWith('1');
+      expect(mockOnClick).toHaveBeenCalledWith('toaster');
       expect(mockOnClick).toHaveBeenCalledTimes(1);
     });
 

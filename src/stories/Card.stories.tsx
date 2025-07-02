@@ -4,7 +4,7 @@ import type { Card as CardType } from '../types';
 
 // Sample card data for stories
 const electricToaster: CardType = {
-  id: '1',
+  id: 'toaster',
   name: 'Electric Toaster',
   description: 'Deal 3 damage to any target. Perfect for breakfast battles and crispy comebacks.',
   imageUrl: '/src/assets/images/cards/toaster.png',
@@ -14,7 +14,7 @@ const electricToaster: CardType = {
 };
 
 const mightyBanana: CardType = {
-  id: '2',
+  id: 'banana',
   name: 'Mighty Banana',
   description: 'A potassium-powered protector of the fruit bowl. Slippery when peeled.',
   imageUrl: '/src/assets/images/cards/banana.png',
@@ -26,7 +26,7 @@ const mightyBanana: CardType = {
 };
 
 const powerCord: CardType = {
-  id: '3',
+  id: 'power-cord',
   name: 'Power Cord',
   description: 'Equipped creature gets +2/+1. Provides the spark needed for victory.',
   imageUrl: '/src/assets/images/cards/power-cord.png',
@@ -36,7 +36,7 @@ const powerCord: CardType = {
 };
 
 const dishSpongeLord: CardType = {
-  id: '4',
+  id: 'sponge',
   name: 'Dish Sponge Lord',
   description: 'Absorb all damage. When Dish Sponge Lord enters, clean up 2 enemy creatures.',
   imageUrl: '/src/assets/images/cards/4.png',
@@ -48,7 +48,7 @@ const dishSpongeLord: CardType = {
 };
 
 const longNameCard: CardType = {
-  id: '5',
+  id: 'long-appliance',
   name: 'Super Ultra Mega Premium Deluxe Kitchen Appliance',
   description: 'This card has an extremely long name that should be truncated properly to test the UI layout. It demonstrates how the component handles overflow text.',
   imageUrl: '/src/assets/images/cards/toaster.png',

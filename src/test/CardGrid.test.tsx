@@ -5,7 +5,7 @@ import type { Card } from '../types';
 
 const mockCards: Card[] = [
   {
-    id: '1',
+    id: 'toaster',
     name: 'Electric Toaster',
     description: 'Deal 3 damage to any target.',
     imageUrl: '/test1.png',
@@ -14,7 +14,7 @@ const mockCards: Card[] = [
     type: 'spell',
   },
   {
-    id: '2',
+    id: 'banana',
     name: 'Mighty Banana',
     description: 'A potassium-powered protector.',
     imageUrl: '/test2.png',
@@ -25,7 +25,7 @@ const mockCards: Card[] = [
     type: 'creature',
   },
   {
-    id: '3',
+    id: 'power-cord',
     name: 'Power Cord',
     description: 'Provides the spark needed.',
     imageUrl: '/test3.png',
@@ -104,16 +104,16 @@ describe('CardGrid Component', () => {
       const firstCard = screen.getAllByTestId('card')[0];
       firstCard?.click();
       
-      expect(mockOnCardClick).toHaveBeenCalledWith('1');
+      expect(mockOnCardClick).toHaveBeenCalledWith('toaster');
     });
 
     it('each card has unique data attributes', () => {
       render(<CardGrid cards={mockCards} onCardClick={mockOnCardClick} />);
       
       const cards = screen.getAllByTestId('card');
-      expect(cards[0]).toHaveAttribute('data-card-id', '1');
-      expect(cards[1]).toHaveAttribute('data-card-id', '2');
-      expect(cards[2]).toHaveAttribute('data-card-id', '3');
+      expect(cards[0]).toHaveAttribute('data-card-id', 'toaster');
+      expect(cards[1]).toHaveAttribute('data-card-id', 'banana');
+      expect(cards[2]).toHaveAttribute('data-card-id', 'power-cord');
     });
   });
 
