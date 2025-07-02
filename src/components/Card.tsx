@@ -14,7 +14,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
       data-testid="card"
       data-card-id={card.id}
       onClick={() => onClick(card.id)}
-      className={`w-full bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-lg hover:shadow-xl hover:bg-white/15 transition-all duration-200 cursor-pointer transform hover:scale-105 ${className}`}
+      className={`bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-lg hover:shadow-xl hover:bg-white/15 transition-all duration-200 cursor-pointer transform hover:scale-105 ${className}`}
     >
       <div className="aspect-[3/4] rounded-lg mb-3 overflow-hidden">
         <CardArtwork card={card} className="w-full h-full" />

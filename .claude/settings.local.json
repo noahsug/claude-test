@@ -28,7 +28,8 @@
       "Bash(./test-puppeteer.sh:*)",
       "Bash(npm run test:*)",
       "Bash(git rm:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(curl:*)"
     ],
     "deny": []
   }

@@ -67,20 +67,26 @@ describe('CardGrid Component', () => {
     });
   });
 
-  describe('Grid Layout', () => {
-    it('applies responsive grid classes', () => {
+  describe('Flex Layout', () => {
+    it('applies flex wrap layout classes', () => {
       const { container } = render(<CardGrid cards={mockCards} onCardClick={mockOnCardClick} />);
       
-      const gridElement = container.firstElementChild?.firstElementChild;
-      expect(gridElement).toHaveClass(
-        'grid',
-        'grid-cols-2',
-        'sm:grid-cols-2',
-        'md:grid-cols-3',
-        'lg:grid-cols-4',
+      const flexElement = container.firstElementChild?.firstElementChild;
+      expect(flexElement).toHaveClass(
+        'flex',
+        'flex-wrap',
         'gap-4',
-        'w-full'
+        'justify-center'
       );
+    });
+
+    it('applies fixed width to cards', () => {
+      render(<CardGrid cards={mockCards} onCardClick={mockOnCardClick} />);
+      
+      const cards = screen.getAllByTestId('card');
+      cards.forEach(card => {
+        expect(card).toHaveClass('w-[200px]', 'flex-shrink-0');
+      });
     });
 
     it('handles empty cards array', () => {
@@ -146,7 +152,7 @@ describe('CardGrid Component', () => {
       const gridContainer = container.firstElementChild;
       const gridElement = gridContainer?.firstElementChild;
       
-      expect(gridElement).toHaveClass('grid');
+      expect(gridElement).toHaveClass('flex');
       expect(screen.getAllByTestId('card')).toHaveLength(3);
     });
   });

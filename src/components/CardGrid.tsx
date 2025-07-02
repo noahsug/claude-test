@@ -10,12 +10,13 @@ interface CardGridProps {
 export function CardGrid({ cards, onCardClick, className = '' }: CardGridProps) {
   return (
     <div className={`container mx-auto px-4 pb-8 ${className}`}>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+      <div className="flex flex-wrap gap-4 justify-center">
         {cards.map((card) => (
           <Card
             key={card.id}
             card={card}
             onClick={onCardClick}
+            className="w-[200px] flex-shrink-0"
           />
         ))}
       </div>
