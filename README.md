@@ -125,7 +125,7 @@ interface Card {
 }
 ```
 
-Sample cards are available in `src/data/sample-cards.ts` with placeholder images.
+Sample cards are available in `src/data/sample-cards.ts` with CSS-generated artwork via the `CardArtwork` component.
 
 ## Navigation & Routing
 

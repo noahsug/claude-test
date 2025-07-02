@@ -1,4 +1,5 @@
 import type { Card } from '@/types';
+import { CardArtwork } from './CardArtwork';
 
 interface CardDetailProps {
   card: Card;
@@ -24,12 +25,8 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
           </button>
           
           <div className="clear-both">
-            <div className="aspect-[3/4] bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg mb-4 overflow-hidden">
-              <img
-                src={card.imageUrl}
-                alt={card.name}
-                className="w-full h-full object-cover"
-              />
+            <div className="aspect-[3/4] rounded-lg mb-4 overflow-hidden">
+              <CardArtwork card={card} className="w-full h-full" />
             </div>
             
             <div className="text-white space-y-4">

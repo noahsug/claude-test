@@ -1,4 +1,5 @@
 import type { Card } from '@/types';
+import { CardArtwork } from './CardArtwork';
 
 interface CardGridProps {
   cards: Card[];
@@ -15,12 +16,8 @@ export function CardGrid({ cards, onCardClick }: CardGridProps) {
             onClick={() => onCardClick(card.id)}
             className="bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-lg hover:shadow-xl hover:bg-white/15 transition-all duration-200 cursor-pointer transform hover:scale-105"
           >
-            <div className="aspect-[3/4] bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg mb-3 overflow-hidden">
-              <img
-                src={card.imageUrl}
-                alt={card.name}
-                className="w-full h-full object-cover"
-              />
+            <div className="aspect-[3/4] rounded-lg mb-3 overflow-hidden">
+              <CardArtwork card={card} className="w-full h-full" />
             </div>
             <div className="text-white">
               <div className="flex justify-between items-start mb-2">
