@@ -122,8 +122,8 @@ interface Card {
   description: string;
   imageUrl: string;
   cost: number;
-  attack?: number;    // Optional: only for creatures
-  defense?: number;   // Optional: only for creatures  
+  attack?: number; // Optional: only for creatures
+  defense?: number; // Optional: only for creatures
   rarity: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
   type: 'creature' | 'spell' | 'artifact';
 }
@@ -156,6 +156,7 @@ The app uses simple hash-based routing for card details:
 3. Update Storybook stories for visual components
 4. Run linting and formatting before committing
 5. Use clear, descriptive commit messages
+6. Commit often, keeping commits small with a single responsibility
 
 ## Development Planning
 
@@ -167,11 +168,12 @@ The app uses simple hash-based routing for card details:
 This project uses Puppeteer for browser automation and E2E testing. See [PUPPETEER.md](./PUPPETEER.md) for detailed setup and usage instructions.
 
 **Quick start:**
+
 ```bash
 # Run interactive example
 node tests/e2e/basic-example.js
 
-# Run full E2E test suite  
+# Run full E2E test suite
 npm run test:e2e
 ```
 
