@@ -115,7 +115,7 @@ async function runBasicExample() {
         hidden: true, 
         timeout: 5000 
       });
-      console.log('❌ Card detail modal closed');
+      console.log('✅ Card detail modal closed');
     }
     
     console.log('✅ Basic example completed successfully!');
