@@ -1,5 +1,9 @@
 **IMPORTANT**: For all project information including development commands, scripts, coding guidelines, project structure, and setup instructions, read [README.md](./README.md) first.
 
+# Tools
+
+- Prefer `rg` over `find`. Use `tldr rg` or `rg --help` to learn about the tool.
+
 # Workflow
 
 - Always read [README.md](./README.md) for project context, development commands, and coding guidelines
