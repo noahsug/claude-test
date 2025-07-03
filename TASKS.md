@@ -46,6 +46,7 @@
 - **Layout**: Keep gradient background theme, header with title, main content area for cards
 - **Card Detail**: Show as overlay/modal when URL hash matches card ID
 - **Images**: Using placeholder images for now, will replace with actual card art later
+- **Card Layout**: Use flexbox with wrapping - cards should display multiple per row and wrap automatically as screen is resized (IMPORTANT: maintain this flexible wrapping behavior)
 
 ## Phase 3: Card System Refactoring
 
@@ -64,6 +65,7 @@
 - [x] Refactor CardGrid to use the new Card component
 - [x] Clean up CardGrid to focus only on grid layout and spacing
 - [x] Verify responsive grid layout works on all breakpoints (sm/md/lg/xl)
+- [x] IMPORTANT: Use flexible wrapping layout - multiple cards per row that wrap on resize
 - [x] Optimize CardGrid performance for large card sets (React.memo implemented)
 - [x] Create updated CardGrid component Storybook stories
 - [x] Update existing CardGrid unit tests
@@ -94,18 +96,18 @@
 
 ### Visual Design
 
-- [x] Implement quirky fun visual theme with household objects and fruits
-- [x] Create card border and background styles
-- [x] Add typography styling
-- [x] Implement bright, cheerful color scheme
-- [x] Add card rarity visual indicators
+- [ ] Implement quirky fun visual theme with household objects and fruits
+- [ ] Create card border and background styles
+- [ ] Add typography styling
+- [ ] Implement bright, cheerful color scheme
+- [ ] Add card rarity visual indicators
 
 ### Responsive Design
 
-- [x] Refine mobile layout with responsive CSS
-- [x] Optimize tablet layout with appropriate breakpoints
-- [x] Polish desktop layout for larger screens
-- [x] Add smooth transitions and animations
+- [ ] Refine mobile layout with responsive CSS
+- [ ] Optimize tablet layout with appropriate breakpoints
+- [ ] Polish desktop layout for larger screens
+- [ ] Add smooth transitions and animations
 
 ## Phase 5: Interactions
 
