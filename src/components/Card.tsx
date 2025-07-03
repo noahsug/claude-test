@@ -81,7 +81,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
           {card.description}
         </p>
         <div className="flex justify-between items-center">
-          <span className={`btn-pixel font-pixel text-xs font-bold px-6 py-3 rounded-lg uppercase tracking-wide text-white cursor-pointer ${
+          <span className={`btn-pixel font-pixel text-xs font-bold px-6 py-3 rounded-lg uppercase tracking-wide text-white ${
             card.rarity === 'legendary' ? 'rarity-legendary' :
             card.rarity === 'epic' ? 'rarity-epic' :
             card.rarity === 'rare' ? 'rarity-rare' :
@@ -92,10 +92,10 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
           </span>
           {card.attack !== undefined && card.defense !== undefined && (
             <div className="flex gap-3 text-sm">
-              <span className="btn-pixel bg-red-500 border-red-700 text-white px-3 py-2 rounded-lg font-pixel font-bold cursor-pointer">
+              <span className="btn-pixel bg-red-500 border-red-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
                 {card.attack}⚔
               </span>
-              <span className="btn-pixel bg-blue-500 border-blue-700 text-white px-3 py-2 rounded-lg font-pixel font-bold cursor-pointer">
+              <span className="btn-pixel bg-blue-500 border-blue-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
                 {card.defense}🛡
               </span>
             </div>
