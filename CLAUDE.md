@@ -35,6 +35,27 @@ This project has Puppeteer MCP server configured for browser automation tasks. U
 - **Use Puppeteer MCP for**: Interactive debugging, ad-hoc testing, visual verification
 - **Use local E2E tests** (`npm run test:e2e`) for: Automated regression testing, CI/CD pipelines
 
+## Code Documentation with Context7 MCP
+
+This project has Context7 MCP server configured for accessing up-to-date, version-specific documentation for programming libraries and frameworks.
+
+### What is Context7?
+
+Context7 eliminates outdated code examples by providing real-time, version-specific documentation directly from package registries. It fetches the latest documentation, ensuring you always have accurate, current information about libraries and frameworks.
+
+### When to Use Context7 MCP
+
+- **Library research** - Get current documentation and examples for npm packages
+- **API reference** - Access latest API documentation for dependencies
+- **Version-specific info** - Ensure code examples match the exact versions used in the project
+- **Framework guidance** - Get up-to-date best practices and patterns
+- **Troubleshooting** - Find current solutions for common library issues
+
+### Context7 vs Traditional Documentation
+
+- **Use Context7 MCP for**: Latest docs, version-specific examples, real-time package info
+- **Use traditional docs** for: General concepts, tutorials, architectural guidance
+
 ## Claude-Specific Instructions
 
 - Always read [README.md](./README.md) for project context, development commands, and coding guidelines
