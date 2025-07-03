@@ -13,11 +13,8 @@ export function Header() {
       </div>
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-pixel font-black text-white text-glow-rainbow mb-6 tracking-wider animate-pulse">
-          ✨ PIXEL CARDS ✨
+          ✨ HOUSEHOLD HEROES ✨
         </h1>
-        <p className="text-white/95 text-lg md:text-xl lg:text-2xl font-pixel bg-black/30 rounded-2xl px-8 py-3 inline-block border-4 border-white/40 shadow-lg text-shadow-pixel backdrop-blur-sm">
-          🏠 Household Heroes Collection 🍌
-        </p>
       </div>
     </header>
   );
