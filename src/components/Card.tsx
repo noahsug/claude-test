@@ -55,12 +55,12 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
         </div>
         <div className="text-white">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="font-pixel text-lg truncate text-white text-shadow-pixel">{card.name}</h3>
+          <h3 className="font-pixel text-lg truncate text-white">{card.name}</h3>
           <span className="cost-gem text-black text-sm font-pixel font-bold px-4 py-2 rounded-lg ml-2 cursor-pointer">
             {card.cost}
           </span>
         </div>
-        <p className="text-white/90 text-sm mb-2 line-clamp-2 drop-shadow-md">
+        <p className="text-white/90 text-sm mb-2 line-clamp-2">
           {card.description}
         </p>
         <div className="flex justify-between items-center">
