@@ -78,7 +78,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
             {card.cost}
           </span>
         </div>
-        <p className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-2 leading-relaxed`}>
+        <p className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-2 leading-relaxed font-fun`}>
           {card.description}
         </p>
         <div className="flex justify-between items-center">
