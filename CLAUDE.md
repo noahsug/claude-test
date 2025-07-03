@@ -11,6 +11,8 @@
 # Workflow
 
 - Always read [README.md](./README.md) for project context, development commands, and coding guidelines
+- When iterating on a component, prefer using storybook first to quickly iterate on the standalone
+  component. Then view the entire application afterwards to make sure the changes are as expected.
 - Before starting a new development server, check to see if one is already running
 - When testing the live application, use Puppeteer MCP tools to interact with `http://localhost:3001`
 - After making a UI change check your work by taking a screenshot and confirming the UI change is
