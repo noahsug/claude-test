@@ -25,8 +25,8 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
       onClick={onClose}
     >
       <div 
-        className="relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl border-2 border-white/30 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/50"
-        onClick={(e) => e.stopPropagation()}
+        className="relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl border-2 border-white/30 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/50 cursor-pointer"
+        onClick={onClose}
         style={{
           backgroundImage: `
             radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 30%),
@@ -37,15 +37,6 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
         }}
       >
         <div className="p-6">
-          <div className="flex justify-end mb-4">
-            <button
-              data-testid="close-button"
-              onClick={onClose}
-              className="text-white/70 hover:text-white text-2xl font-bold leading-none w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
-            >
-              ×
-            </button>
-          </div>
           
           <div>
             <div className="aspect-[3/4] rounded-lg mb-4 overflow-hidden">
