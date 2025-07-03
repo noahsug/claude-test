@@ -23,6 +23,21 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
     }
   };
 
+  const getResponsiveTitleSize = (text: string) => {
+    const length = text.length;
+    if (length <= 10) return 'text-lg';
+    if (length <= 15) return 'text-base';
+    if (length <= 20) return 'text-sm';
+    return 'text-xs';
+  };
+
+  const getResponsiveDescriptionSize = (text: string) => {
+    const length = text.length;
+    if (length <= 50) return 'text-sm';
+    if (length <= 80) return 'text-xs';
+    return 'text-[10px]';
+  };
+
   return (
     <div
       data-testid="card"
@@ -55,12 +70,14 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
         </div>
         <div className="text-white">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="font-pixel text-lg truncate text-white">{card.name}</h3>
-          <span className="cost-gem text-black text-sm font-pixel font-bold px-4 py-2 rounded-lg ml-2 cursor-pointer">
+          <h3 className={`font-pixel ${getResponsiveTitleSize(card.name)} text-white leading-tight flex-1 pr-2`}>
+            {card.name}
+          </h3>
+          <span className="cost-gem text-black text-sm font-pixel font-bold px-4 py-2 rounded-lg ml-2 cursor-pointer flex-shrink-0">
             {card.cost}
           </span>
         </div>
-        <p className="text-white/90 text-sm mb-2 line-clamp-2">
+        <p className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-2 leading-relaxed`}>
           {card.description}
         </p>
         <div className="flex justify-between items-center">
