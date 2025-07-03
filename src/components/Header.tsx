@@ -12,10 +12,10 @@ export function Header() {
         <div className="absolute top-5 left-3/4 w-1.5 h-1.5 bg-yellow-300 rounded-full animate-pulse delay-200"></div>
       </div>
       <div className="max-w-6xl mx-auto text-center relative z-10">
-        <h1 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300 mb-3 tracking-wide drop-shadow-lg">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-pixel font-black text-white text-glow-rainbow mb-6 tracking-wider animate-pulse">
           ✨ PIXEL CARDS ✨
         </h1>
-        <p className="text-white/90 text-xl md:text-2xl font-semibold bg-black/20 rounded-full px-6 py-2 inline-block border border-white/30">
+        <p className="text-white/95 text-lg md:text-xl lg:text-2xl font-pixel bg-black/30 rounded-2xl px-8 py-3 inline-block border-4 border-white/40 shadow-lg text-shadow-pixel backdrop-blur-sm">
           🏠 Household Heroes Collection 🍌
         </p>
       </div>

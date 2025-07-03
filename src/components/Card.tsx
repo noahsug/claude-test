@@ -55,8 +55,8 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
         </div>
         <div className="text-white">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="font-bold text-lg truncate text-white drop-shadow-lg">{card.name}</h3>
-          <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-sm font-bold px-3 py-1 rounded-full ml-2 shadow-lg border-2 border-yellow-300 hover:from-yellow-300 hover:to-amber-400 transition-all duration-200 hover:scale-110 drop-shadow-md">
+          <h3 className="font-pixel text-lg truncate text-white text-shadow-pixel">{card.name}</h3>
+          <span className="cost-gem text-black text-sm font-pixel font-bold px-4 py-2 rounded-lg ml-2 cursor-pointer">
             {card.cost}
           </span>
         </div>
@@ -64,21 +64,21 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
           {card.description}
         </p>
         <div className="flex justify-between items-center">
-          <span className={`text-xs font-bold px-3 py-1 rounded-full border-2 shadow-lg uppercase tracking-wide transition-all duration-200 hover:scale-110 drop-shadow-md ${
-            card.rarity === 'legendary' ? 'bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 text-white border-orange-300 shadow-[0_0_15px_rgba(251,146,60,0.6)]' :
-            card.rarity === 'epic' ? 'bg-gradient-to-r from-purple-400 to-indigo-500 text-white border-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.6)]' :
-            card.rarity === 'rare' ? 'bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-blue-300 shadow-[0_0_15px_rgba(59,130,246,0.6)]' :
-            card.rarity === 'uncommon' ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-white border-green-300 shadow-[0_0_15px_rgba(34,197,94,0.6)]' :
-            'bg-gradient-to-r from-gray-400 to-slate-500 text-white border-gray-300 shadow-[0_0_15px_rgba(148,163,184,0.6)]'
+          <span className={`btn-pixel font-pixel text-xs font-bold px-4 py-2 rounded-lg uppercase tracking-wide text-white cursor-pointer ${
+            card.rarity === 'legendary' ? 'rarity-legendary' :
+            card.rarity === 'epic' ? 'rarity-epic' :
+            card.rarity === 'rare' ? 'rarity-rare' :
+            card.rarity === 'uncommon' ? 'rarity-uncommon' :
+            'rarity-common'
           }`}>
             {card.rarity}
           </span>
           {card.attack !== undefined && card.defense !== undefined && (
-            <div className="flex gap-2 text-sm">
-              <span className="bg-red-500/30 border-2 border-red-400 text-red-200 px-2 py-1 rounded-lg font-bold shadow-lg hover:scale-110 transition-all duration-200 drop-shadow-md">
+            <div className="flex gap-3 text-sm">
+              <span className="btn-pixel bg-red-500 border-red-700 text-white px-3 py-2 rounded-lg font-pixel font-bold cursor-pointer">
                 {card.attack}⚔
               </span>
-              <span className="bg-blue-500/30 border-2 border-blue-400 text-blue-200 px-2 py-1 rounded-lg font-bold shadow-lg hover:scale-110 transition-all duration-200 drop-shadow-md">
+              <span className="btn-pixel bg-blue-500 border-blue-700 text-white px-3 py-2 rounded-lg font-pixel font-bold cursor-pointer">
                 {card.defense}🛡
               </span>
             </div>
