@@ -73,7 +73,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
           <h3 className={`font-pixel ${getResponsiveTitleSize(card.name)} text-white leading-tight flex-1 pr-2`}>
             {card.name}
           </h3>
-          <span className="cost-gem text-black text-sm font-pixel font-bold px-4 py-2 rounded-lg ml-2 cursor-pointer flex-shrink-0">
+          <span className="cost-gem text-black text-sm font-pixel font-bold px-6 py-3 rounded-lg ml-2 cursor-pointer flex-shrink-0">
             {card.cost}
           </span>
         </div>
@@ -81,7 +81,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
           {card.description}
         </p>
         <div className="flex justify-between items-center">
-          <span className={`btn-pixel font-pixel text-xs font-bold px-4 py-2 rounded-lg uppercase tracking-wide text-white cursor-pointer ${
+          <span className={`btn-pixel font-pixel text-xs font-bold px-6 py-3 rounded-lg uppercase tracking-wide text-white cursor-pointer ${
             card.rarity === 'legendary' ? 'rarity-legendary' :
             card.rarity === 'epic' ? 'rarity-epic' :
             card.rarity === 'rare' ? 'rarity-rare' :
