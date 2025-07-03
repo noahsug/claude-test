@@ -1,11 +1,5 @@
 import type { Card as CardType } from '@/types';
 import { memo } from 'preact/compat';
-import legendaryBorder from '@/assets/images/ui/legendary-border.png';
-import epicBorder from '@/assets/images/ui/epic-border.png';
-import rareBorder from '@/assets/images/ui/rare-border.png';
-import costIconBg from '@/assets/images/icons/cost-icon-bg.png';
-import attackIconBg from '@/assets/images/icons/attack-icon-bg.png';
-import defenseIconBg from '@/assets/images/icons/defense-icon-bg.png';
 
 interface CardProps {
   card: CardType;
@@ -14,20 +8,20 @@ interface CardProps {
 }
 
 function CardComponent({ card, onClick, className = '' }: CardProps) {
-  const getBorderImage = () => {
+  const getRarityBorderStyles = () => {
     switch (card.rarity) {
       case 'legendary':
-        return legendaryBorder;
+        return 'border-orange-400 shadow-orange-500/50 hover:shadow-orange-500/70 bg-gradient-to-br from-orange-500/10 via-red-500/5 to-pink-500/10';
       case 'epic':
-        return epicBorder;
+        return 'border-purple-400 shadow-purple-500/50 hover:shadow-purple-500/70 bg-gradient-to-br from-purple-500/10 via-indigo-500/5 to-purple-500/10';
       case 'rare':
-        return rareBorder;
+        return 'border-blue-400 shadow-blue-500/50 hover:shadow-blue-500/70 bg-gradient-to-br from-blue-500/10 via-cyan-500/5 to-blue-500/10';
+      case 'uncommon':
+        return 'border-green-400 shadow-green-500/50 hover:shadow-green-500/70 bg-gradient-to-br from-green-500/10 via-emerald-500/5 to-green-500/10';
       default:
-        return null;
+        return 'border-white/30 shadow-black/20 hover:shadow-black/30 bg-gradient-to-br from-white/20 to-white/5';
     }
   };
-
-  const borderImage = getBorderImage();
 
   return (
     <div
@@ -35,34 +29,22 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
       data-card-id={card.id}
       onClick={() => onClick(card.id)}
       className={`
-        bg-gradient-to-br from-white/20 to-white/5 
         backdrop-blur-md 
-        border-2 border-white/30 
+        border-2 
         rounded-xl 
         p-4 
-        shadow-xl shadow-black/20
-        hover:shadow-2xl hover:shadow-black/30
+        shadow-xl
+        hover:shadow-2xl
         hover:border-white/50
         hover:from-white/30 hover:to-white/10
         transition-all duration-300 ease-out
         cursor-pointer 
         transform hover:scale-105 hover:-translate-y-1
         relative
+        ${getRarityBorderStyles()}
         ${className}
       `}
     >
-      {/* Rarity border effect overlay */}
-      {borderImage && (
-        <div 
-          className="absolute inset-0 pointer-events-none opacity-60 rounded-xl"
-          style={{
-            backgroundImage: `url(${borderImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        ></div>
-      )}
       <div className="relative z-10">
         <div className="aspect-[3/4] rounded-lg mb-3 overflow-hidden border-2 border-white/20 bg-gradient-to-br from-slate-700 to-slate-900">
           <img 
@@ -75,15 +57,8 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
         <div className="text-white">
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-bold text-lg truncate">{card.name}</h3>
-          <span 
-            className="relative bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-sm font-bold px-3 py-1 rounded-full ml-2 shadow-lg border border-yellow-300 hover:from-yellow-300 hover:to-amber-400 transition-all duration-200"
-            style={{
-              backgroundImage: `url(${costIconBg})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          >
-            <span className="relative z-10">{card.cost}</span>
+          <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-sm font-bold px-3 py-1 rounded-full ml-2 shadow-lg border border-yellow-300 hover:from-yellow-300 hover:to-amber-400 transition-all duration-200">
+            {card.cost}
           </span>
         </div>
         <p className="text-white/80 text-sm mb-2 line-clamp-2">
@@ -101,25 +76,11 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
           </span>
           {card.attack !== undefined && card.defense !== undefined && (
             <div className="flex gap-2 text-sm">
-              <span 
-                className="relative bg-red-500/20 border border-red-400 text-red-300 px-2 py-1 rounded-md font-bold"
-                style={{
-                  backgroundImage: `url(${attackIconBg})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <span className="relative z-10">{card.attack}⚔</span>
+              <span className="bg-red-500/20 border border-red-400 text-red-300 px-2 py-1 rounded-md font-bold">
+                {card.attack}⚔
               </span>
-              <span 
-                className="relative bg-blue-500/20 border border-blue-400 text-blue-300 px-2 py-1 rounded-md font-bold"
-                style={{
-                  backgroundImage: `url(${defenseIconBg})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <span className="relative z-10">{card.defense}🛡</span>
+              <span className="bg-blue-500/20 border border-blue-400 text-blue-300 px-2 py-1 rounded-md font-bold">
+                {card.defense}🛡
               </span>
             </div>
           )}

@@ -1,6 +1,5 @@
 import type { Card } from '@/types';
 import { useEffect } from 'preact/hooks';
-import modalTexture from '@/assets/images/ui/modal-texture.png';
 
 interface CardDetailProps {
   card: Card;
@@ -29,10 +28,12 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
         className="relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl border-2 border-white/30 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/50"
         onClick={(e) => e.stopPropagation()}
         style={{
-          backgroundImage: `url(${modalTexture})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundBlendMode: 'overlay'
+          backgroundImage: `
+            radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 30%),
+            radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 20%),
+            radial-gradient(circle at 40% 80%, rgba(255,255,255,0.06) 0%, transparent 25%),
+            linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.05) 100%)
+          `
         }}
       >
         <div className="p-6">
