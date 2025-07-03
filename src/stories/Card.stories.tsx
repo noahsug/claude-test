@@ -7,7 +7,7 @@ const electricToaster: CardType = {
   id: 'toaster',
   name: 'Electric Toaster',
   description: 'Deal 3 damage to any target. Perfect for breakfast battles and crispy comebacks.',
-  imageUrl: '/src/assets/images/cards/toaster.png',
+  imageUrl: './src/assets/images/cards/toaster.png',
   cost: 1,
   rarity: 'common',
   type: 'spell',
@@ -17,7 +17,7 @@ const mightyBanana: CardType = {
   id: 'banana',
   name: 'Mighty Banana',
   description: 'A potassium-powered protector of the fruit bowl. Slippery when peeled.',
-  imageUrl: '/src/assets/images/cards/banana.png',
+  imageUrl: './src/assets/images/cards/banana.png',
   cost: 4,
   attack: 4,
   defense: 5,
@@ -29,7 +29,7 @@ const powerCord: CardType = {
   id: 'power-cord',
   name: 'Power Cord',
   description: 'Equipped creature gets +2/+1. Provides the spark needed for victory.',
-  imageUrl: '/src/assets/images/cards/power-cord.png',
+  imageUrl: './src/assets/images/cards/power-cord.png',
   cost: 2,
   rarity: 'uncommon',
   type: 'artifact',
@@ -39,7 +39,7 @@ const dishSpongeLord: CardType = {
   id: 'sponge',
   name: 'Dish Sponge Lord',
   description: 'Absorb all damage. When Dish Sponge Lord enters, clean up 2 enemy creatures.',
-  imageUrl: '/src/assets/images/cards/4.png',
+  imageUrl: './src/assets/images/cards/sponge.png',
   cost: 8,
   attack: 8,
   defense: 8,
@@ -51,11 +51,23 @@ const longNameCard: CardType = {
   id: 'long-appliance',
   name: 'Super Ultra Mega Premium Deluxe Kitchen Appliance',
   description: 'This card has an extremely long name that should be truncated properly to test the UI layout. It demonstrates how the component handles overflow text.',
-  imageUrl: '/src/assets/images/cards/toaster.png',
+  imageUrl: './src/assets/images/cards/toaster.png',
   cost: 15,
   attack: 1,
   defense: 1,
   rarity: 'epic',
+  type: 'creature',
+};
+
+const caffeinatedMug: CardType = {
+  id: 'caffeinated-mug',
+  name: 'Caffeinated Mug',
+  description: 'Provides energy boost to all friendly creatures. Double the caffeine, double the power!',
+  imageUrl: './src/assets/images/cards/mug.png',
+  cost: 3,
+  attack: 2,
+  defense: 3,
+  rarity: 'uncommon',
   type: 'creature',
 };
 
@@ -191,3 +203,14 @@ export const CustomClassName: Story = {
   },
 };
 (CustomClassName as any).args = { card: mightyBanana, className: 'ring-2 ring-yellow-400' };
+
+export const CaffeinatedMug: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Example of a card with a longer name to test text wrapping.',
+      },
+    },
+  },
+};
+(CaffeinatedMug as any).args = { card: caffeinatedMug };

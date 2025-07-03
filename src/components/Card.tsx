@@ -11,15 +11,15 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
   const getRarityBorderStyles = () => {
     switch (card.rarity) {
       case 'legendary':
-        return 'border-4 border-orange-400 shadow-[0_0_25px_rgba(251,146,60,0.8)] hover:shadow-[0_0_35px_rgba(251,146,60,1)] bg-gradient-to-br from-orange-500/20 via-red-500/10 to-pink-500/20 hover:from-orange-500/30 hover:to-pink-500/30';
+        return 'border-4 border-orange-400 shadow-[0_0_25px_rgba(251,146,60,0.8)] bg-gradient-to-br from-orange-500/20 via-red-500/10 to-pink-500/20';
       case 'epic':
-        return 'border-4 border-purple-400 shadow-[0_0_25px_rgba(168,85,247,0.8)] hover:shadow-[0_0_35px_rgba(168,85,247,1)] bg-gradient-to-br from-purple-500/20 via-indigo-500/10 to-purple-500/20 hover:from-purple-500/30 hover:to-indigo-500/30';
+        return 'border-4 border-purple-400 shadow-[0_0_25px_rgba(168,85,247,0.8)] bg-gradient-to-br from-purple-500/20 via-indigo-500/10 to-purple-500/20';
       case 'rare':
-        return 'border-4 border-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.8)] hover:shadow-[0_0_35px_rgba(59,130,246,1)] bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-blue-500/20 hover:from-blue-500/30 hover:to-cyan-500/30';
+        return 'border-4 border-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.8)] bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-blue-500/20';
       case 'uncommon':
-        return 'border-4 border-green-400 shadow-[0_0_25px_rgba(34,197,94,0.8)] hover:shadow-[0_0_35px_rgba(34,197,94,1)] bg-gradient-to-br from-green-500/20 via-emerald-500/10 to-green-500/20 hover:from-green-500/30 hover:to-emerald-500/30';
+        return 'border-4 border-green-400 shadow-[0_0_25px_rgba(34,197,94,0.8)] bg-gradient-to-br from-green-500/20 via-emerald-500/10 to-green-500/20';
       default:
-        return 'border-4 border-slate-400 shadow-[0_0_20px_rgba(148,163,184,0.6)] hover:shadow-[0_0_30px_rgba(148,163,184,0.8)] bg-gradient-to-br from-slate-500/20 via-slate-600/10 to-slate-500/20 hover:from-slate-500/30 hover:to-slate-600/30';
+        return 'border-4 border-slate-400 shadow-[0_0_20px_rgba(148,163,184,0.6)] bg-gradient-to-br from-slate-500/20 via-slate-600/10 to-slate-500/20';
     }
   };
 
@@ -38,6 +38,21 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
     return 'text-[10px]';
   };
 
+  const getRarityClassName = () => {
+    switch (card.rarity) {
+      case 'legendary':
+        return 'rarity-legendary';
+      case 'epic':
+        return 'rarity-epic';
+      case 'rare':
+        return 'rarity-rare';
+      case 'uncommon':
+        return 'rarity-uncommon';
+      default:
+        return 'rarity-common';
+    }
+  };
+
   return (
     <div
       data-testid="card"
@@ -47,7 +62,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
         group
         backdrop-blur-md
         rounded-2xl
-        p-4
+        pt-0 px-0 pb-2
         transition-all duration-300 ease-out
         cursor-pointer
         transform hover:scale-[1.08] hover:-translate-y-2
@@ -56,60 +71,43 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
         ${className}
       `}
       style={{
-        imageRendering: 'pixelated',
         filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))',
       }}
     >
-      <div className="relative z-10">
-        <div className="aspect-[3/4] rounded-xl mb-3 overflow-hidden border-4 border-white/40 bg-gradient-to-br from-slate-700 to-slate-900 shadow-inner">
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="aspect-[3/4] rounded-xl rounded-b-none overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900 shadow-inner">
           <img
             src={card.imageUrl}
             alt={card.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-            style={{ imageRendering: 'pixelated' }}
           />
         </div>
-        <div className="text-white">
-          <div className="flex justify-between items-start mb-2">
+        <div className="text-white px-2 flex flex-col flex-1 mt-2 relative">
+          <span className="cost-gem text-black text-xs font-pixel font-bold px-2 py-1 rounded cursor-pointer absolute top-0 right-2 z-20">
+            {card.cost}
+          </span>
+          <div className="mb-2">
             <h3
-              className={`font-pixel ${getResponsiveTitleSize(card.name)} text-white leading-tight flex-1 pr-2 ml-4`}
+              className={`font-pixel ${getResponsiveTitleSize(card.name)} text-white leading-tight max-w-[calc(100%-50px)]`}
             >
               {card.name}
             </h3>
-            <span className="cost-gem text-black text-sm font-pixel font-bold px-6 py-3 rounded-lg ml-2 cursor-pointer flex-shrink-0">
-              {card.cost}
-            </span>
           </div>
           <p
-            className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-2 leading-relaxed font-fun ml-4`}
+            className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-2 leading-relaxed font-fun flex-1`}
           >
             {card.description}
           </p>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-end mt-auto">
             <span
-              className={`btn-pixel font-pixel text-xs font-bold px-6 py-3 rounded-lg uppercase tracking-wide text-white ml-4 ${
-                card.rarity === 'legendary'
-                  ? 'rarity-legendary'
-                  : card.rarity === 'epic'
-                    ? 'rarity-epic'
-                    : card.rarity === 'rare'
-                      ? 'rarity-rare'
-                      : card.rarity === 'uncommon'
-                        ? 'rarity-uncommon'
-                        : 'rarity-common'
-              }`}
+              className={`font-pixel text-xs font-bold px-1 py-0 rounded uppercase tracking-wide text-white ml-1 ${getRarityClassName()}`}
             >
               {card.rarity}
             </span>
             {card.attack !== undefined && card.defense !== undefined && (
-              <div className="flex gap-3 text-sm">
-                <span className="bg-red-500 border border-red-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
-                  {card.attack}⚔
-                </span>
-                <span className="bg-blue-500 border border-blue-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
-                  {card.defense}🛡
-                </span>
-              </div>
+              <span className="bg-gray-800 border border-gray-600 text-white px-1 py-0.5 rounded text-xs font-pixel font-bold flex-shrink-0">
+                {card.attack}⚔{card.defense}🛡
+              </span>
             )}
           </div>
         </div>
