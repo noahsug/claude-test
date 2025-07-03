@@ -93,10 +93,10 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
           </span>
           {card.attack !== undefined && card.defense !== undefined && (
             <div className="flex gap-3 text-sm">
-              <span className="btn-pixel bg-red-500 border-red-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
+              <span className="bg-red-500 border border-red-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
                 {card.attack}⚔
               </span>
-              <span className="btn-pixel bg-blue-500 border-blue-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
+              <span className="bg-blue-500 border border-blue-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
                 {card.defense}🛡
               </span>
             </div>
