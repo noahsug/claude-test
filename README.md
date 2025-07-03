@@ -5,14 +5,6 @@ engaging, interactive interface featuring quirky, fun themes like household obje
 
 [View the webpage](https://noahsug.github.io/claude-test/)
 
-## Features
-
-- **Quirky Fun Aesthetic** - Cards feature amusing themes like household objects and fruits
-- **Responsive Design** - Optimized for mobile, tablet, and desktop
-- **Clean UI** - Uncluttered interface with fun, approachable theme
-- **Interactive Cards** - Hover effects and smooth animations
-- **Type-Safe Development** - Built with TypeScript for reliability
-
 ## Tech Stack
 
 - **[Vite](https://vitejs.dev/)** - Build tool and development server
@@ -129,7 +121,7 @@ interface Card {
 }
 ```
 
-Sample cards are available in `src/data/sample-cards.ts` with CSS-generated artwork via the `CardArtwork` component.
+Sample cards are available in `src/data/sample-cards.ts`
 
 ## Navigation & Routing
 
