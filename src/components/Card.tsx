@@ -44,6 +44,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
       data-card-id={card.id}
       onClick={() => onClick(card.id)}
       className={`
+        group
         backdrop-blur-md 
         rounded-2xl 
         p-4 
@@ -64,7 +65,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
           <img 
             src={card.imageUrl} 
             alt={card.name}
-            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             style={{ imageRendering: 'pixelated' }}
           />
         </div>
