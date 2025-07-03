@@ -34,12 +34,18 @@ export function App() {
   const selectedCard = selectedCardId ? sampleCards.find(card => card.id === selectedCardId) : null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      <Header />
-      <CardGrid cards={sampleCards} onCardClick={handleCardClick} />
-      {selectedCard && (
-        <CardDetail card={selectedCard} onClose={handleCloseDetail} />
-      )}
+    <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/10 via-transparent to-yellow-400/10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
+      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(255,119,198,0.2),transparent_50%)]"></div>
+      <div className="relative z-10">
+        <Header />
+        <CardGrid cards={sampleCards} onCardClick={handleCardClick} />
+        {selectedCard && (
+          <CardDetail card={selectedCard} onClose={handleCloseDetail} />
+        )}
+      </div>
     </div>
   );
 }

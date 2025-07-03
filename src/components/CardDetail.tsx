@@ -25,7 +25,7 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
       onClick={onClose}
     >
       <div 
-        className="bg-white/10 backdrop-blur-md rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+        className="bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl border-2 border-white/30 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/50"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-6">
