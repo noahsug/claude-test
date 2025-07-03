@@ -12,11 +12,13 @@
   - **Files**: `src/index.css`, `src/app.tsx`
   - **Implementation**: Add `body { margin: 0; }` and ensure background covers full viewport
 
+- [ ] **Use repeating background-pattern.png** as the background
+
 #### Card Grid Layout
 
 - [ ] **Add margin between cards**
   - **Problem**: Card borders are touching
-  - **Solution**: Add consistent gap between cards in grid
+  - **Solution**: Add consistent gap between cards in grid (vertically and horizontally)
   - **Files**: `src/components/CardGrid.tsx`
   - **Implementation**: Use `gap-4` class or equivalent spacing in flexbox/grid
 

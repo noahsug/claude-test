@@ -4,6 +4,10 @@
 
 - Prefer `rg` over `find`. Use `tldr rg` or `rg --help` to learn about the tool.
 
+# Coding Style
+
+- Avoid using the TypeScript `any` type.
+
 # Workflow
 
 - Always read [README.md](./README.md) for project context, development commands, and coding guidelines
