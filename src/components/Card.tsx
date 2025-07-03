@@ -11,15 +11,15 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
   const getRarityBorderStyles = () => {
     switch (card.rarity) {
       case 'legendary':
-        return 'border-orange-400 shadow-orange-500/50 hover:shadow-orange-500/70 bg-gradient-to-br from-orange-500/10 via-red-500/5 to-pink-500/10';
+        return 'border-4 border-orange-400 shadow-[0_0_25px_rgba(251,146,60,0.8)] hover:shadow-[0_0_35px_rgba(251,146,60,1)] bg-gradient-to-br from-orange-500/20 via-red-500/10 to-pink-500/20 hover:from-orange-500/30 hover:to-pink-500/30';
       case 'epic':
-        return 'border-purple-400 shadow-purple-500/50 hover:shadow-purple-500/70 bg-gradient-to-br from-purple-500/10 via-indigo-500/5 to-purple-500/10';
+        return 'border-4 border-purple-400 shadow-[0_0_25px_rgba(168,85,247,0.8)] hover:shadow-[0_0_35px_rgba(168,85,247,1)] bg-gradient-to-br from-purple-500/20 via-indigo-500/10 to-purple-500/20 hover:from-purple-500/30 hover:to-indigo-500/30';
       case 'rare':
-        return 'border-blue-400 shadow-blue-500/50 hover:shadow-blue-500/70 bg-gradient-to-br from-blue-500/10 via-cyan-500/5 to-blue-500/10';
+        return 'border-4 border-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.8)] hover:shadow-[0_0_35px_rgba(59,130,246,1)] bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-blue-500/20 hover:from-blue-500/30 hover:to-cyan-500/30';
       case 'uncommon':
-        return 'border-green-400 shadow-green-500/50 hover:shadow-green-500/70 bg-gradient-to-br from-green-500/10 via-emerald-500/5 to-green-500/10';
+        return 'border-4 border-green-400 shadow-[0_0_25px_rgba(34,197,94,0.8)] hover:shadow-[0_0_35px_rgba(34,197,94,1)] bg-gradient-to-br from-green-500/20 via-emerald-500/10 to-green-500/20 hover:from-green-500/30 hover:to-emerald-500/30';
       default:
-        return 'border-white/30 shadow-black/20 hover:shadow-black/30 bg-gradient-to-br from-white/20 to-white/5';
+        return 'border-4 border-slate-400 shadow-[0_0_20px_rgba(148,163,184,0.6)] hover:shadow-[0_0_30px_rgba(148,163,184,0.8)] bg-gradient-to-br from-slate-500/20 via-slate-600/10 to-slate-500/20 hover:from-slate-500/30 hover:to-slate-600/30';
     }
   };
 
@@ -30,23 +30,22 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
       onClick={() => onClick(card.id)}
       className={`
         backdrop-blur-md 
-        border-2 
-        rounded-xl 
+        rounded-2xl 
         p-4 
-        shadow-xl
-        hover:shadow-2xl
-        hover:border-white/50
-        hover:from-white/30 hover:to-white/10
         transition-all duration-300 ease-out
         cursor-pointer 
-        transform hover:scale-105 hover:-translate-y-1
+        transform hover:scale-[1.08] hover:-translate-y-2
         relative
         ${getRarityBorderStyles()}
         ${className}
       `}
+      style={{
+        imageRendering: 'pixelated',
+        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
+      }}
     >
       <div className="relative z-10">
-        <div className="aspect-[3/4] rounded-lg mb-3 overflow-hidden border-2 border-white/20 bg-gradient-to-br from-slate-700 to-slate-900">
+        <div className="aspect-[3/4] rounded-xl mb-3 overflow-hidden border-4 border-white/40 bg-gradient-to-br from-slate-700 to-slate-900 shadow-inner">
           <img 
             src={card.imageUrl} 
             alt={card.name}
@@ -56,30 +55,30 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
         </div>
         <div className="text-white">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="font-bold text-lg truncate">{card.name}</h3>
-          <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-sm font-bold px-3 py-1 rounded-full ml-2 shadow-lg border border-yellow-300 hover:from-yellow-300 hover:to-amber-400 transition-all duration-200">
+          <h3 className="font-bold text-lg truncate text-white drop-shadow-lg">{card.name}</h3>
+          <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-sm font-bold px-3 py-1 rounded-full ml-2 shadow-lg border-2 border-yellow-300 hover:from-yellow-300 hover:to-amber-400 transition-all duration-200 hover:scale-110 drop-shadow-md">
             {card.cost}
           </span>
         </div>
-        <p className="text-white/80 text-sm mb-2 line-clamp-2">
+        <p className="text-white/90 text-sm mb-2 line-clamp-2 drop-shadow-md">
           {card.description}
         </p>
         <div className="flex justify-between items-center">
-          <span className={`text-xs font-bold px-3 py-1 rounded-full border-2 shadow-lg uppercase tracking-wide transition-all duration-200 hover:scale-105 ${
-            card.rarity === 'legendary' ? 'bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 text-white border-orange-300 shadow-orange-500/50' :
-            card.rarity === 'epic' ? 'bg-gradient-to-r from-purple-400 to-indigo-500 text-white border-purple-300 shadow-purple-500/50' :
-            card.rarity === 'rare' ? 'bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-blue-300 shadow-blue-500/50' :
-            card.rarity === 'uncommon' ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-white border-green-300 shadow-green-500/50' :
-            'bg-gradient-to-r from-gray-400 to-slate-500 text-white border-gray-300 shadow-gray-500/50'
+          <span className={`text-xs font-bold px-3 py-1 rounded-full border-2 shadow-lg uppercase tracking-wide transition-all duration-200 hover:scale-110 drop-shadow-md ${
+            card.rarity === 'legendary' ? 'bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 text-white border-orange-300 shadow-[0_0_15px_rgba(251,146,60,0.6)]' :
+            card.rarity === 'epic' ? 'bg-gradient-to-r from-purple-400 to-indigo-500 text-white border-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.6)]' :
+            card.rarity === 'rare' ? 'bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-blue-300 shadow-[0_0_15px_rgba(59,130,246,0.6)]' :
+            card.rarity === 'uncommon' ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-white border-green-300 shadow-[0_0_15px_rgba(34,197,94,0.6)]' :
+            'bg-gradient-to-r from-gray-400 to-slate-500 text-white border-gray-300 shadow-[0_0_15px_rgba(148,163,184,0.6)]'
           }`}>
             {card.rarity}
           </span>
           {card.attack !== undefined && card.defense !== undefined && (
             <div className="flex gap-2 text-sm">
-              <span className="bg-red-500/20 border border-red-400 text-red-300 px-2 py-1 rounded-md font-bold">
+              <span className="bg-red-500/30 border-2 border-red-400 text-red-200 px-2 py-1 rounded-lg font-bold shadow-lg hover:scale-110 transition-all duration-200 drop-shadow-md">
                 {card.attack}⚔
               </span>
-              <span className="bg-blue-500/20 border border-blue-400 text-blue-300 px-2 py-1 rounded-md font-bold">
+              <span className="bg-blue-500/30 border-2 border-blue-400 text-blue-200 px-2 py-1 rounded-lg font-bold shadow-lg hover:scale-110 transition-all duration-200 drop-shadow-md">
                 {card.defense}🛡
               </span>
             </div>

@@ -136,7 +136,7 @@ Sample cards are available in `src/data/sample-cards.ts` with CSS-generated artw
 The app uses simple hash-based routing for card details:
 
 - Main view: `/` (shows all cards in grid)
-- Card detail: `/#card-1` (shows expanded view of card with ID "1")
+- Card detail: `/#card-x` (shows expanded view of card with ID "x")
 - Back button support included for seamless navigation
 
 ## Design Guidelines
@@ -152,17 +152,15 @@ The app uses simple hash-based routing for card details:
 
 ## Contributing
 
-1. Follow the coding best practices outlined in [CLAUDE.md](./CLAUDE.md)
-2. Write tests for new components
-3. Update Storybook stories for visual components
-4. Run linting and formatting before committing
-5. Use clear, descriptive commit messages
-6. Commit often, keeping commits small with a single responsibility
+1. Write tests for new components
+2. Update Storybook stories for visual components
+3. Run linting and formatting before committing
+4. Use clear, descriptive commit messages
+5. Commit often, keeping commits small with a single responsibility
 
 ## Development Planning
 
 - **[TASKS.md](./TASKS.md)** - Complete project roadmap and task breakdown
-- **[PHASE3_PLAN.md](./PHASE3_PLAN.md)** - Detailed Phase 3 implementation strategy and architecture decisions
 
 ## End-to-End Testing
 

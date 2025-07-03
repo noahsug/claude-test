@@ -41,7 +41,8 @@
       "Bash(mv:*)",
       "Bash(python3:*)",
       "mcp__puppeteer__puppeteer_click",
-      "Bash(mcp add:*)"
+      "Bash(mcp add:*)",
+      "mcp__puppeteer__puppeteer_hover"
     ],
     "deny": []
   }
