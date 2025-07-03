@@ -12,4 +12,4 @@
 - Use the path aliases and project structure documented in README.md
 - Be sure to typecheck when you’re done making a series of code changes
 - Prefer running single tests, and not the whole test suite, for performance
-- Make a git commit whenever you finish a chunk of work
+- Commit your code every time you finish a major change
