@@ -1,5 +1,6 @@
 import type { Card } from '@/types';
 import { useEffect } from 'preact/hooks';
+import modalTexture from '@/assets/images/ui/modal-texture.png';
 
 interface CardDetailProps {
   card: Card;
@@ -25,8 +26,14 @@ export function CardDetail({ card, onClose }: CardDetailProps) {
       onClick={onClose}
     >
       <div 
-        className="bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl border-2 border-white/30 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/50"
+        className="relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl border-2 border-white/30 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/50"
         onClick={(e) => e.stopPropagation()}
+        style={{
+          backgroundImage: `url(${modalTexture})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay'
+        }}
       >
         <div className="p-6">
           <div className="flex justify-end mb-4">

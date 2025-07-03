@@ -38,7 +38,9 @@
       "Bash(npx:*)",
       "mcp__puppeteer__puppeteer_navigate",
       "mcp__puppeteer__puppeteer_screenshot",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(python3:*)",
+      "mcp__puppeteer__puppeteer_click"
     ],
     "deny": []
   }
