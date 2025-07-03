@@ -44,8 +44,16 @@
       "Bash(mcp add:*)",
       "mcp__puppeteer__puppeteer_hover",
       "Bash(npm run typecheck:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "mcp__puppeteer__puppeteer_evaluate",
+      "Bash(true)",
+      "Bash(grep:*)",
+      "WebFetch(domain:tailwindcss.com)"
     ],
     "deny": []
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "puppeteer"
+  ]
 }

@@ -45,11 +45,11 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
       onClick={() => onClick(card.id)}
       className={`
         group
-        backdrop-blur-md 
-        rounded-2xl 
-        p-4 
+        backdrop-blur-md
+        rounded-2xl
+        p-4
         transition-all duration-300 ease-out
-        cursor-pointer 
+        cursor-pointer
         transform hover:scale-[1.08] hover:-translate-y-2
         relative
         ${getRarityBorderStyles()}
@@ -57,51 +57,61 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
       `}
       style={{
         imageRendering: 'pixelated',
-        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
+        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))',
       }}
     >
       <div className="relative z-10">
         <div className="aspect-[3/4] rounded-xl mb-3 overflow-hidden border-4 border-white/40 bg-gradient-to-br from-slate-700 to-slate-900 shadow-inner">
-          <img 
-            src={card.imageUrl} 
+          <img
+            src={card.imageUrl}
             alt={card.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             style={{ imageRendering: 'pixelated' }}
           />
         </div>
         <div className="text-white">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className={`font-pixel ${getResponsiveTitleSize(card.name)} text-white leading-tight flex-1 pr-2 ml-2`}>
-            {card.name}
-          </h3>
-          <span className="cost-gem text-black text-sm font-pixel font-bold px-6 py-3 rounded-lg ml-2 cursor-pointer flex-shrink-0">
-            {card.cost}
-          </span>
-        </div>
-        <p className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-2 leading-relaxed font-fun`}>
-          {card.description}
-        </p>
-        <div className="flex justify-between items-center">
-          <span className={`btn-pixel font-pixel text-xs font-bold px-6 py-3 rounded-lg uppercase tracking-wide text-white ml-2 ${
-            card.rarity === 'legendary' ? 'rarity-legendary' :
-            card.rarity === 'epic' ? 'rarity-epic' :
-            card.rarity === 'rare' ? 'rarity-rare' :
-            card.rarity === 'uncommon' ? 'rarity-uncommon' :
-            'rarity-common'
-          }`}>
-            {card.rarity}
-          </span>
-          {card.attack !== undefined && card.defense !== undefined && (
-            <div className="flex gap-3 text-sm">
-              <span className="bg-red-500 border border-red-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
-                {card.attack}⚔
-              </span>
-              <span className="bg-blue-500 border border-blue-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
-                {card.defense}🛡
-              </span>
-            </div>
-          )}
-        </div>
+          <div className="flex justify-between items-start mb-2">
+            <h3
+              className={`font-pixel ${getResponsiveTitleSize(card.name)} text-white leading-tight flex-1 pr-2 ml-4`}
+            >
+              {card.name}
+            </h3>
+            <span className="cost-gem text-black text-sm font-pixel font-bold px-6 py-3 rounded-lg ml-2 cursor-pointer flex-shrink-0">
+              {card.cost}
+            </span>
+          </div>
+          <p
+            className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-2 leading-relaxed font-fun ml-4`}
+          >
+            {card.description}
+          </p>
+          <div className="flex justify-between items-center">
+            <span
+              className={`btn-pixel font-pixel text-xs font-bold px-6 py-3 rounded-lg uppercase tracking-wide text-white ml-4 ${
+                card.rarity === 'legendary'
+                  ? 'rarity-legendary'
+                  : card.rarity === 'epic'
+                    ? 'rarity-epic'
+                    : card.rarity === 'rare'
+                      ? 'rarity-rare'
+                      : card.rarity === 'uncommon'
+                        ? 'rarity-uncommon'
+                        : 'rarity-common'
+              }`}
+            >
+              {card.rarity}
+            </span>
+            {card.attack !== undefined && card.defense !== undefined && (
+              <div className="flex gap-3 text-sm">
+                <span className="bg-red-500 border border-red-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
+                  {card.attack}⚔
+                </span>
+                <span className="bg-blue-500 border border-blue-700 text-white px-3 py-2 rounded-lg font-pixel font-bold">
+                  {card.defense}🛡
+                </span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

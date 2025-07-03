@@ -17,6 +17,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "preact": "^10.19.6"
   },
   "devDependencies": {
