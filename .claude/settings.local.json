@@ -48,7 +48,10 @@
       "mcp__puppeteer__puppeteer_evaluate",
       "Bash(true)",
       "Bash(grep:*)",
-      "WebFetch(domain:tailwindcss.com)"
+      "WebFetch(domain:tailwindcss.com)",
+      "Bash(magick:*)",
+      "Bash(convert:*)",
+      "Bash(sips:*)"
     ],
     "deny": []
   },
