@@ -62,7 +62,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
         group
         backdrop-blur-md
         rounded-2xl
-        pt-0 px-0 pb-2
+        pt-0 px-0 pb-1
         transition-all duration-300 ease-out
         cursor-pointer
         transform hover:scale-[1.08] hover:-translate-y-2
@@ -75,18 +75,18 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
       }}
     >
       <div className="relative z-10 flex flex-col h-full">
-        <div className="aspect-[3/4] rounded-xl rounded-b-none overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900 shadow-inner">
+        <div className="aspect-[5/3.5] rounded-xl rounded-b-none overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900 shadow-inner">
           <img
             src={card.imageUrl}
             alt={card.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
           />
         </div>
-        <div className="text-white px-2 flex flex-col flex-1 mt-2 relative">
+        <div className="text-white px-2 flex flex-col flex-1 mt-1 relative">
           <span className="cost-gem text-black text-xs font-pixel font-bold px-2 py-1 rounded cursor-pointer absolute top-0 right-2 z-20">
             {card.cost}
           </span>
-          <div className="mb-2">
+          <div className="mb-1">
             <h3
               className={`font-pixel ${getResponsiveTitleSize(card.name)} text-white leading-tight max-w-[calc(100%-50px)]`}
             >
@@ -94,7 +94,7 @@ function CardComponent({ card, onClick, className = '' }: CardProps) {
             </h3>
           </div>
           <p
-            className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-2 leading-relaxed font-fun flex-1`}
+            className={`text-white/90 ${getResponsiveDescriptionSize(card.description)} mb-1 leading-snug font-fun flex-1`}
           >
             {card.description}
           </p>
