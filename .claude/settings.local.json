@@ -51,7 +51,10 @@
       "WebFetch(domain:tailwindcss.com)",
       "Bash(magick:*)",
       "Bash(convert:*)",
-      "Bash(sips:*)"
+      "Bash(sips:*)",
+      "Bash(gh repo rename:*)",
+      "WebFetch(domain:apidog.com)",
+      "WebFetch(domain:www.anthropic.com)"
     ],
     "deny": []
   },
