@@ -3,7 +3,7 @@
 A modern web application that displays a collection of trading card game-style cards with an
 engaging, interactive interface featuring quirky, fun themes like household objects, fruits, and everyday items.
 
-[View the webpage](https://noahsug.github.io/claude-test/)
+[View the webpage](https://noahsug.github.io/household-heroes/)
 
 ## Tech Stack
 
@@ -29,7 +29,7 @@ engaging, interactive interface featuring quirky, fun themes like household obje
 
 ```bash
 git clone <repository-url>
-cd claude-test
+cd household-heroes
 ```
 
 2. Install dependencies:
