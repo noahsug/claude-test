@@ -1,12 +1,22 @@
 import type { Card } from '@/types';
 
+// Import all card images as modules so they get bundled
+import toasterImg from '@/assets/images/cards/toaster.png';
+import bananaImg from '@/assets/images/cards/banana.png';
+import powerCordImg from '@/assets/images/cards/power-cord.png';
+import spongeImg from '@/assets/images/cards/sponge.png';
+import duckImg from '@/assets/images/cards/duck.png';
+import mugImg from '@/assets/images/cards/mug.png';
+import calculatorImg from '@/assets/images/cards/calculator.png';
+import timerImg from '@/assets/images/cards/timer.png';
+
 export const sampleCards: Card[] = [
   {
     id: 'toaster',
     name: 'Electric Toaster',
     description:
       'Deal 3 damage to any target. Perfect for breakfast battles and crispy comebacks.',
-    imageUrl: '/src/assets/images/cards/toaster.png', // Pixel art toaster artwork
+    imageUrl: toasterImg, // Pixel art toaster artwork
     cost: 1,
     rarity: 'common',
     type: 'spell',
@@ -16,7 +26,7 @@ export const sampleCards: Card[] = [
     name: 'Mighty Banana',
     description:
       'A potassium-powered protector of the fruit bowl. Slippery when peeled.',
-    imageUrl: '/src/assets/images/cards/banana.png', // Pixel art banana artwork
+    imageUrl: bananaImg, // Pixel art banana artwork
     cost: 4,
     attack: 4,
     defense: 5,
@@ -28,7 +38,7 @@ export const sampleCards: Card[] = [
     name: 'Power Cord',
     description:
       'Equipped creature gets +2/+1. Provides the spark needed for victory.',
-    imageUrl: '/src/assets/images/cards/power-cord.png', // Pixel art power cord artwork
+    imageUrl: powerCordImg, // Pixel art power cord artwork
     cost: 2,
     rarity: 'uncommon',
     type: 'artifact',
@@ -38,7 +48,7 @@ export const sampleCards: Card[] = [
     name: 'Dish Sponge Lord',
     description:
       'Absorb all damage. When Dish Sponge Lord enters, clean up 2 enemy creatures.',
-    imageUrl: '/src/assets/images/cards/sponge.png', // Pixel art sponge artwork
+    imageUrl: spongeImg, // Pixel art sponge artwork
     cost: 8,
     attack: 8,
     defense: 8,
@@ -50,7 +60,7 @@ export const sampleCards: Card[] = [
     name: 'Debug Duck',
     description:
       'When played, reveal all bugs in enemy code. Squeaks when pressed.',
-    imageUrl: '/src/assets/images/cards/duck.png',
+    imageUrl: duckImg,
     cost: 2,
     attack: 1,
     defense: 3,
@@ -62,7 +72,7 @@ export const sampleCards: Card[] = [
     name: 'Caffeinated Mug',
     description:
       'Grant +2 attack to all friendly creatures until end of turn. Contains 100% pure energy.',
-    imageUrl: '/src/assets/images/cards/mug.png',
+    imageUrl: mugImg,
     cost: 3,
     rarity: 'common',
     type: 'spell',
@@ -72,7 +82,7 @@ export const sampleCards: Card[] = [
     name: 'Scientific Calculator',
     description:
       'Calculate the exact probability of victory. Always shows the answer is 42.',
-    imageUrl: '/src/assets/images/cards/calculator.png',
+    imageUrl: calculatorImg,
     cost: 5,
     attack: 3,
     defense: 7,
@@ -84,7 +94,7 @@ export const sampleCards: Card[] = [
     name: 'Ticking Timer',
     description:
       'Countdown 3 turns. When timer reaches 0, deal 5 damage to all enemies.',
-    imageUrl: '/src/assets/images/cards/timer.png',
+    imageUrl: timerImg,
     cost: 4,
     rarity: 'rare',
     type: 'artifact',
